@@ -21,15 +21,28 @@ const SceneCanvas = () => {
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls 
           // enableZoom={false} 
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
+          // maxPolarAngle={Math.PI / 2}
+          // minPolarAngle={Math.PI / 2}
         />
-        <ambientLight intensity={1} />
+        <ambientLight intensity={0.6} />
         <group>
-          <Robot />
+          <Robot
+            position={[-0.25, 0.17, -0.7]}
+            rotation={[0, 15, 0]}
+            scale={1.2}
+          />
           <Room />
-          <Dev />
-          <Book />
+          <Dev
+            position={[-1.5, 0.55, 0.5]}
+            rotation={[0, 0, 0]}
+            scale={1}
+          />
+          <Book
+            position={[-1.32, 0.72, 0.5]}
+            rotation={[-0.4, 1.1, 0.3]}
+            scale={0.3}
+          />
+          <axesHelper args={[2]} />
         </group>
         
       </Suspense>

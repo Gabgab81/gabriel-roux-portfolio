@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { useGLTF, Decal, useTexture, RenderTexture } from '@react-three/drei';
 // import { FlakesTexture } from 'three-stdlib';
 
-const Book = () => {
+const Book = (props) => {
   // const book = useGLTF("./book/scene.gltf");
   const { nodes } = useGLTF("./book/scene.gltf");
   const textures = useTexture("GPT50ForDummies.png")
@@ -18,29 +18,20 @@ const Book = () => {
     //   />
       
     // </mesh>
-    <group>
+    <group {...props}>
       <mesh 
         castShadow 
         receiveShadow 
         geometry={nodes.Architexture_0.geometry}
-        scale={0.3}
         // position={[0, 0, 0]}
       >
         <Decal
-          debug
+          // debug
           position={[0.4, 0, 0.1]}
           rotation={[0, 0, 0]}
           scale={[0.75, 1, 1]}
           map={textures}
-        >
-          {/* <meshStandardMaterial 
-            metalness={0.2} 
-            roughness={0.8}   
-            // color={"Yellow"} 
-            // map={textures}
-          /> */}
-        </Decal>
-        
+        />
       </mesh>
       
       <mesh 
