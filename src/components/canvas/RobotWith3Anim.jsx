@@ -49,8 +49,8 @@ export function Robot(props) {
             <meshStandardMaterial
               metalness={0.4}
               roughness={0.2}
-              color={materials['Alpha_Body_MAT.001'].color}
-              // color={"green"}
+              // color={materials['Alpha_Body_MAT.001'].color}
+              color={"white"}
               normalMap={texture}
               normalMap-repeat={[35, 35]}
               normalScale={[0.15, 0.15]}

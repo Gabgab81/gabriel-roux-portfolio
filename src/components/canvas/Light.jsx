@@ -8,7 +8,7 @@ const Light = ({position, rotation, color, intensity }) => {
   const lightRef = useRef();
   // useHelper(lightRef, SpotLightHelper, 0.5, 'red')
   // useHelper(lightRef, DirectionalLightHelper, 0.5, 'red')
-  useHelper(lightRef, PointLightHelper, 0.5, 'red')
+  // useHelper(lightRef, PointLightHelper, 0.5, 'red')
 
   return (
 
