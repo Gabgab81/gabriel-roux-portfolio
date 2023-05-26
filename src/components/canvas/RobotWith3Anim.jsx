@@ -33,8 +33,8 @@ export function Robot(props) {
           <primitive object={nodes.Ctrl_LegPole_IK_Left} />
           <primitive object={nodes.Ctrl_Foot_IK_Right} />
           <primitive object={nodes.Ctrl_LegPole_IK_Right} />
-          
-          <skinnedMesh name="Alpha_Joints" geometry={nodes.Alpha_Joints.geometry} material={materials['Alpha_Joints_MAT.001']} skeleton={nodes.Alpha_Joints.skeleton}>
+
+          <skinnedMesh castShadow receiveShadow name="Alpha_Joints" geometry={nodes.Alpha_Joints.geometry} material={materials['Alpha_Joints_MAT.001']} skeleton={nodes.Alpha_Joints.skeleton}>
             {/* <hemisphereLight intensity={0.5} groundColor='black' /> */}
             {/* <pointLight intensity={1} /> */}
             <meshStandardMaterial 
@@ -44,7 +44,7 @@ export function Robot(props) {
               // color={"white"} 
             />
           </skinnedMesh>
-          <skinnedMesh name="Alpha_Surface" geometry={nodes.Alpha_Surface.geometry} material={materials['Alpha_Body_MAT.001']} skeleton={nodes.Alpha_Surface.skeleton}>
+          <skinnedMesh castShadow receiveShadow name="Alpha_Surface" geometry={nodes.Alpha_Surface.geometry} material={materials['Alpha_Body_MAT.001']} skeleton={nodes.Alpha_Surface.skeleton}>
             
             <meshStandardMaterial
               metalness={0.4}

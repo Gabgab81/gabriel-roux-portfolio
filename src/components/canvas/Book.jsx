@@ -27,6 +27,8 @@ const Book = (props) => {
       >
         <Decal
           // debug
+          castShadow 
+          receiveShadow 
           position={[0.4, 0, 0.1]}
           rotation={[0, 0, 0]}
           scale={[0.75, 1, 1]}
