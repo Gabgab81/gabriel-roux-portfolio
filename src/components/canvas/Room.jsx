@@ -5,9 +5,15 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 
 const Room = (props) => {
   const room = useGLTF("./room/scene.gltf");
+  // const { nodes } = useGLTF("./room/scene.gltf");
 
   return (
-    <mesh {...props}>
+    <mesh 
+      {...props}
+      castShadow 
+      receiveShadow
+      >
+      {/* {console.log(nodes)} */}
       <primitive
         object={room.scene}
         // scale={isMobile ? 0.7 : 0.75}
