@@ -314,7 +314,7 @@ const TextScreen = (props) => {
     i = textRef.current["_private_text"].length / 2.7
     // textRef.current.position.x = -8
     textRef.current.position.x = i - ((state.clock.elapsedTime * randSpeedTextRef)%(i * 4));
-  
+    // console.log(state)
   });
 
   return (

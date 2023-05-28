@@ -4,19 +4,39 @@ Command: npx gltfjsx@6.1.11 RobotWith3Anim.glb
 */
 import * as THREE from 'three';
 import React, { useRef, useState, useEffect } from 'react';
-import { useGLTF, useAnimations } from '@react-three/drei';
+import { useGLTF, useAnimations, useCursor } from '@react-three/drei';
 import { FlakesTexture } from 'three-stdlib';
 
 export function Robot(props) {
   const group = useRef()
 
+  const [hovered, set] = useState()
+  useCursor(hovered,/*'pointer', 'auto'*/)
+
   const [texture] = useState(() => new THREE.CanvasTexture(new FlakesTexture(), THREE.UVMapping, THREE.RepeatWrapping, THREE.RepeatWrapping))
 
   const { nodes, materials, animations } = useGLTF('/RobotWith3Anim.glb')
-  const { actions } = useAnimations(animations, group)
+  const { actions, names } = useAnimations(animations, group)
+  
+  // Test for the annimation
+
+  const model = useGLTF('/RobotWith3Anim.glb')
+  let mixer = new THREE.AnimationMixer(model)
+  
+  // console.log(mixer)
+  mixer.addEventListener('finished', console.log("finished"))
+
+  // Test for the annimation
 
   useEffect(() => {
+    // nodes.addEvenListen('finished', console.log("finished"))
+    actions["Typing"].setLoop(THREE.LoopOnce)
+    // console.log(actions["Typing"].setLoop(THREE.LoopOnce))
+    actions["Typing"].clampWhenFinished = true
     actions["Typing"].play();
+    // mixer.addEventListener('finished', console.log("finished"))
+    // actions["SittingLA"].reset().fadeIn(0.5).play();
+    // console.log(names)
   })
 
   return (
@@ -34,7 +54,12 @@ export function Robot(props) {
           <primitive object={nodes.Ctrl_Foot_IK_Right} />
           <primitive object={nodes.Ctrl_LegPole_IK_Right} />
 
-          <skinnedMesh castShadow receiveShadow name="Alpha_Joints" geometry={nodes.Alpha_Joints.geometry} material={materials['Alpha_Joints_MAT.001']} skeleton={nodes.Alpha_Joints.skeleton}>
+          <skinnedMesh ref={(refRobot)} castShadow receiveShadow name="Alpha_Joints" geometry={nodes.Alpha_Joints.geometry} material={materials['Alpha_Joints_MAT.001']} skeleton={nodes.Alpha_Joints.skeleton}
+          onClick={() => {
+            console.log("hello")
+          }}
+          onPointerOver={() => set(true)} onPointerOut={() => set(false)}
+          >
             {/* <hemisphereLight intensity={0.5} groundColor='black' /> */}
             {/* <pointLight intensity={1} /> */}
             <meshStandardMaterial 
@@ -44,7 +69,12 @@ export function Robot(props) {
               // color={"white"} 
             />
           </skinnedMesh>
-          <skinnedMesh castShadow receiveShadow name="Alpha_Surface" geometry={nodes.Alpha_Surface.geometry} material={materials['Alpha_Body_MAT.001']} skeleton={nodes.Alpha_Surface.skeleton}>
+          <skinnedMesh castShadow receiveShadow name="Alpha_Surface" geometry={nodes.Alpha_Surface.geometry} material={materials['Alpha_Body_MAT.001']} skeleton={nodes.Alpha_Surface.skeleton}
+          onClick={() => {
+            console.log("hello")
+          } }
+          onPointerOver={() => set(true)} onPointerOut={() => set(false)}
+          >
             
             <meshStandardMaterial
               metalness={0.4}

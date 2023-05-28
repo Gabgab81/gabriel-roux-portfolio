@@ -30,7 +30,7 @@ import { EffectComposer, Bloom, DepthOfField } from '@react-three/postprocessing
 
 const SceneCanvas = () => {
 
-  const { p_red, p_green, p_blue, r_red, r_green, r_blue, scale, text, minAzimuthAngle, maxAzimuthAngle } = useControls({
+  const { p_red, p_green, p_blue, r_red, r_green, r_blue, scale, text, minAzimuthAngle, maxAzimuthAngle, hidden } = useControls({
     position: folder({
       p_red: { value: -2, min: -5, max: 5, step: 0.1 },
       p_green: { value: 1.6, min: -5, max: 5, step: 0.1 },
@@ -45,6 +45,7 @@ const SceneCanvas = () => {
     text: "Hi, I'm Gabriel",
     minAzimuthAngle: { value: 6, min: -20, max: 20, step: 0.1 },
     maxAzimuthAngle: { value: 6, min: -10, max: 10, step: 0.1 },
+    hidden: true
   })
 
 
@@ -78,7 +79,7 @@ const SceneCanvas = () => {
           maxPolarAngle={Math.PI - Math.PI / 2}
         />
         
-
+        {hidden && (
         <group>
 
           <mesh position={[0, 0.15, 0]} receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
@@ -162,7 +163,7 @@ const SceneCanvas = () => {
     
           
           {/* <axesHelper args={[2]} position={[0, 0.2, 0]}/> */}
-        </group>
+        </group> )}
         
       </Suspense>
       <Preload all />
