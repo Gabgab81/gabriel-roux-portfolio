@@ -24,11 +24,14 @@ import { Dev } from "./DevLaying";
 import Light from "./Light";
 import Text3d from "./Text3d";
 
+import CameraControls from "./CameraControls";
+
 import { folder, useControls } from "leva"
 
 import fontUrl from "./ElevateSans.otf"
 
 import { EffectComposer, Bloom, DepthOfField } from '@react-three/postprocessing'
+import BoxCollider from "./BoxCollider";
 
 const SceneCanvas = () => {
 
@@ -71,15 +74,15 @@ const SceneCanvas = () => {
         <color attach="background" args={["black"]} />
         <hemisphereLight intensity={0.2} color={'black'}/>
         <Environment preset="night" />
-        <OrbitControls 
-          // target={[p_red, p_green, p_blue]}
+        <CameraControls />
+        {/* <OrbitControls 
           target={[-0.6, 1.1, -0.2]}
-          // enableZoom={false} 
-          // minAzimuthAngle={-Math.PI / -10}
-          // maxAzimuthAngle={Math.PI / 3}
-          // minPolarAngle={Math.PI / 4}
-          // maxPolarAngle={Math.PI - Math.PI / 2}
-        />
+          enableZoom={false} 
+          minAzimuthAngle={-Math.PI / -10}
+          maxAzimuthAngle={Math.PI / 3}
+          minPolarAngle={Math.PI / 4}
+          maxPolarAngle={Math.PI - Math.PI / 2}
+      /> */}
         
         {hidden && (
         <group>
@@ -144,6 +147,13 @@ const SceneCanvas = () => {
           >
             interfaces and web applications.
           </Text>
+
+          <BoxCollider 
+            position={[0, 0.9, -0.9]} 
+            rotation={[0, 0, 0]}
+            scale={[0.8, 1.4, 0.8]}
+          />
+
           <Gpt 
             position={[-0.15, 0.19, -0.7]}
             rotation={[0, 15.1, 0]}

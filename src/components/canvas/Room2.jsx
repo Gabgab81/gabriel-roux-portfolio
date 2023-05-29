@@ -8,12 +8,22 @@ Title: room
 */
 
 import React, { useRef } from 'react'
-import { useGLTF, RenderTexture, Text, PerspectiveCamera } from '@react-three/drei'
+import { useGLTF, RenderTexture, Text, PerspectiveCamera, Decal, useTexture } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+
+import { useFirstScene } from "../../contexts/FirstSceneContext";
 
 export function Room2(props) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/room/scene.gltf')
+
+  const textures1 = useTexture("/images/CatPack.jpg")
+  const textures2 = useTexture("/images/CatPack2.jpg")
+
+  //Context
+  const { animationIndex  } = useFirstScene();
+  //Context
+
   // const { actions } = useAnimations(animations, group)
 
   return (
@@ -84,7 +94,22 @@ export function Room2(props) {
                   <group name="pCube189">
 
                     <mesh castShadow receiveShadow name="pCube189_pink_emeshon_0" geometry={nodes.pCube189_pink_emeshon_0.geometry} material={materials.pink_emeshon}>
-                      <Screen position={[0, 5.7, 19.7]}/>
+                      
+                      {(animationIndex == 0) && (
+                        <Screen position={[0, 5.7, 19.7]}/>
+                      )}
+                      {(animationIndex == 1) && (
+                        <Decal
+                          // debug
+                          castShadow 
+                          receiveShadow 
+                          position={[-0.33, 3.6, -3]}
+                          rotation={[0, 0, 0]}
+                          scale={[2, 0.9, 0.6]}
+                          map={textures1}
+                        />
+                      )}
+                      
                     </mesh>
 
                     <mesh castShadow receiveShadow name="pCube189_white_0" geometry={nodes.pCube189_white_0.geometry} material={materials.white} />
@@ -220,7 +245,21 @@ export function Room2(props) {
                   {/* Bottom screen */}
                   <group name="polySurface208">
                     <mesh castShadow receiveShadow name="polySurface208_pink_emeshon_0" geometry={nodes.polySurface208_pink_emeshon_0.geometry} material={materials.pink_emeshon}>
-                      <Screen position={[0, 13, 35]}/>
+
+                      {(animationIndex == 0) && (
+                        <Screen position={[0, 13, 35]}/>
+                      )}
+                      {(animationIndex == 1) && (
+                        <Decal
+                          // debug
+                          castShadow 
+                          receiveShadow 
+                          position={[0, 2.7, -3]}
+                          rotation={[0, 0, 0]}
+                          scale={[2.3, 0.9, 0.6]}
+                          map={textures2}
+                        />
+                      )}
                     </mesh>
                     <mesh castShadow receiveShadow name="polySurface208_white_0" geometry={nodes.polySurface208_white_0.geometry} material={materials.white} />
                   </group>

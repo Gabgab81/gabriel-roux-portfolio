@@ -2,11 +2,14 @@ import * as THREE from 'three';
 import React, { useRef, useState, useEffect } from 'react';
 import { useGLTF, Decal, useTexture, useCursor} from '@react-three/drei';
 // import { FlakesTexture } from 'three-stdlib';
+import { useFirstScene, CameraModes } from "../../contexts/FirstSceneContext";
 
 const Book = (props) => {
   // const book = useGLTF("./book/scene.gltf");
   const { nodes } = useGLTF("./book/scene.gltf");
-  const textures = useTexture("GPT50ForDummies.png")
+  const textures = useTexture("/images/GPT50ForDummies.png")
+
+  const { cameraMode, setCameraMode } = useFirstScene();
 
   //Cursor
   const [hovered, setHovered] = useState(false)
@@ -22,7 +25,10 @@ const Book = (props) => {
         receiveShadow 
         geometry={nodes.Architexture_0.geometry}
         // position={[0, 0, 0]}
-        onClick={() => console.log("book")}
+        onClick={() => {
+          setCameraMode( (cameraMode == (CameraModes.BOOK) ) ? CameraModes.BACK : CameraModes.BOOK)
+          console.log(cameraMode)
+          }}
         onPointerOver={() => setHovered(true)} 
         onPointerOut={() => setHovered(false)}
       >

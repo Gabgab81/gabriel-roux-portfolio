@@ -7,13 +7,15 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useGLTF, useAnimations, useFBX, useCursor } from '@react-three/drei';
 import { FlakesTexture } from 'three-stdlib';
 
+import { useFirstScene } from "../../contexts/FirstSceneContext";
+
 export function Gpt(props) {
   const group = useRef()
 
-  //Cursor
-  // const [hovered, setHovered] = useState()
-  // useCursor(hovered,/*'pointer', 'auto'*/)
-  //Cursor
+  // Cursor
+  const [hovered, setHovered] = useState()
+  useCursor(hovered,/*'pointer', 'auto'*/)
+  // Cursor
 
   //Model
   const [texture] = useState(() => new THREE.CanvasTexture(new FlakesTexture(), THREE.UVMapping, THREE.RepeatWrapping, THREE.RepeatWrapping))
@@ -28,8 +30,6 @@ export function Gpt(props) {
   sittingAnimation[0].name = "sitting";
   //Animations
 
- 
-
   //Mixer for the addEvenListener
   // const model = useGLTF('/public/models/gpt.glb')
   // console.log(model)
@@ -41,8 +41,13 @@ export function Gpt(props) {
 
   //Mixer for the addEvenListener
   
-  const { actions, mixer, clips } = useAnimations([typingAnimation[0], sittingAnimation[0]], group)
-  
+  const { actions, mixer, clips, names } = useAnimations([typingAnimation[0], sittingAnimation[0]], group)
+
+  //Context
+  const { setAnimations, animationIndex, setAnimationIndex } = useFirstScene();
+  //Context
+
+  // console.log(names[0])
   const sittingClip = THREE.AnimationClip.findByName(clips, "sitting")
   // const sittingAction = mixer.clipAction(sittingClip)
 
@@ -55,21 +60,42 @@ export function Gpt(props) {
   // let value = mixer.hasEventListener('finished', console.log("toto"));
   // console.log(value)
   // mixer.addEventListener('finished', console.log("finished"))
+
+  // actions[names[1]].setLoop(THREE.LoopOnce)
+
   useEffect(() => {
+    setAnimations(names)
+    actions[names[1]].setLoop(THREE.LoopOnce)
+    actions[names[1]].clampWhenFinished = true
+    // console.log('setting animations name')
+  }, [names])
+
+  useEffect(() => {
+    actions[names[animationIndex]].stop()
+    actions[names[animationIndex]].fadeIn(0.5).play();
     
-    actions["sitting"].setLoop(THREE.LoopOnce)
-    actions["sitting"].clampWhenFinished = true
-    actions.sitting.reset
-    actions.sitting.play()
-   
+    // console.log(animationIndex)
+
     mixer.addEventListener('finished', function(e) {
-      actions.sitting.stop()
-      
-      actions.typing.reset()
-      actions.typing.play()
+      setAnimationIndex(0)
     })
+    return () => {
+      actions[names[animationIndex]].fadeOut(0.5);
+    }
+
+    // actions["sitting"].setLoop(THREE.LoopOnce)
+    // actions["sitting"].clampWhenFinished = true
+    // actions.sitting.reset
+    // actions.sitting.play()
+   
+    // mixer.addEventListener('finished', function(e) {
+    //   actions.sitting.stop()
+      
+    //   actions.typing.reset()
+    //   actions.typing.play()
+    // })
     // actions.typing.play()
-  })
+  }, [animationIndex])
 
   return (
     <group ref={group} {...props} dispose={null}>
