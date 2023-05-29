@@ -248,7 +248,7 @@ export function Room2(props) {
   )
 }
 
-useGLTF.preload('/scene.gltf')
+useGLTF.preload('/room/scene.gltf')
 
 const Screen = (props) => {
   

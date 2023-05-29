@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import React, { useRef, useState, useEffect } from 'react';
-import { useGLTF, Decal, useTexture, RenderTexture } from '@react-three/drei';
+import { useGLTF, Decal, useTexture, useCursor} from '@react-three/drei';
 // import { FlakesTexture } from 'three-stdlib';
 
 const Book = (props) => {
@@ -8,22 +8,23 @@ const Book = (props) => {
   const { nodes } = useGLTF("./book/scene.gltf");
   const textures = useTexture("GPT50ForDummies.png")
 
+  //Cursor
+  const [hovered, setHovered] = useState(false)
+  useCursor(hovered,/*'pointer', 'auto'*/)
+  //Cursor
+
   return (
-    // <mesh>
-    //   <primitive
-    //     object={book.scene}
-    //     // scale={isMobile ? 0.7 : 0.75}
-    //     position={[0, 2, 0]}
-    //     rotation={[20, 0, 0]}
-    //   />
-      
-    // </mesh>
+    
+
     <group {...props}>
       <mesh 
         castShadow 
         receiveShadow 
         geometry={nodes.Architexture_0.geometry}
         // position={[0, 0, 0]}
+        onClick={() => console.log("book")}
+        onPointerOver={() => setHovered(true)} 
+        onPointerOut={() => setHovered(false)}
       >
         <Decal
           // debug

@@ -15,6 +15,8 @@ import {
 import CanvasLoader from '../Loader'
 
 import { Robot } from "./RobotWith3Anim";
+import { Gpt } from "./Gpt"
+
 import Room  from "./Room";
 import { Room2 }  from "./Room2";
 import Book from "./Book";
@@ -72,11 +74,11 @@ const SceneCanvas = () => {
         <OrbitControls 
           // target={[p_red, p_green, p_blue]}
           target={[-0.6, 1.1, -0.2]}
-          enableZoom={false} 
-          minAzimuthAngle={-Math.PI / -10}
-          maxAzimuthAngle={Math.PI / 3}
-          minPolarAngle={Math.PI / 4}
-          maxPolarAngle={Math.PI - Math.PI / 2}
+          // enableZoom={false} 
+          // minAzimuthAngle={-Math.PI / -10}
+          // maxAzimuthAngle={Math.PI / 3}
+          // minPolarAngle={Math.PI / 4}
+          // maxPolarAngle={Math.PI - Math.PI / 2}
         />
         
         {hidden && (
@@ -142,12 +144,16 @@ const SceneCanvas = () => {
           >
             interfaces and web applications.
           </Text>
-
-          <Robot
+          <Gpt 
+            position={[-0.15, 0.19, -0.7]}
+            rotation={[0, 15.1, 0]}
+            scale={1.1}
+          />
+          {/* <Robot
             position={[-0.25, 0.19, -0.7]}
             rotation={[0, 15, 0]}
             scale={1.1}
-          />
+          /> */}
           {/* <Room /> */}
           <Room2 />
           <Dev
