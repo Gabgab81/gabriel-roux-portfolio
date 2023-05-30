@@ -40,36 +40,63 @@ export function Room2(props) {
                 <group name="aiAreaLight2" position={[0.38, 7.87, 0.11]} rotation={[-1.14, 0, 0]} scale={[3.7, 1.69, 7.27]} />
                 <group name="aiAreaLight3" position={[-0.74, 1.97, -3.97]} rotation={[Math.PI / 2, 0, 0]} scale={[1.72, 0.04, 7.27]} />
                 <group name="room">
+
+                  {/* Table */}
                   <group name="pCube10">
                     <mesh castShadow receiveShadow name="pCube10_tabel_wood_0" geometry={nodes.pCube10_tabel_wood_0.geometry} material={materials.tabel_wood} />
                   </group>
+                   {/* Table */}
+
+                  {/* Cup */}
                   <group name="polySurface93" position={[-0.87, 0.01, -0.27]} rotation={[0, -0.66, 0]} scale={1.1}>
-                    <mesh castShadow receiveShadow name="polySurface93_glass_0" geometry={nodes.polySurface93_glass_0.geometry} material={materials.glass} />
+                    {/* <mesh castShadow receiveShadow name="polySurface93_glass_0" geometry={nodes.polySurface93_glass_0.geometry} material={materials.glass} /> */}
                   </group>
+                  {/* Cup */}
+
+                  {/* plate */}
                   <group name="pCylinder2">
-                    <mesh castShadow receiveShadow name="pCylinder2_cups_0" geometry={nodes.pCylinder2_cups_0.geometry} material={materials.cups} />
+                    {/* <mesh castShadow receiveShadow name="pCylinder2_cups_0" geometry={nodes.pCylinder2_cups_0.geometry} material={materials.cups} /> */}
                   </group>
+                  {/* plate */}
+
+                  {/* light */}
                   <group name="pCylinder3">
-                    <mesh castShadow receiveShadow name="pCylinder3_black_0" geometry={nodes.pCylinder3_black_0.geometry} material={materials.black} />
-                    <mesh castShadow receiveShadow name="pCylinder3_pink_emeshon_0" geometry={nodes.pCylinder3_pink_emeshon_0.geometry} material={materials.pink_emeshon} />
+                    {/* <mesh castShadow receiveShadow name="pCylinder3_black_0" geometry={nodes.pCylinder3_black_0.geometry} material={materials.black} />
+                    <mesh castShadow receiveShadow name="pCylinder3_pink_emeshon_0" geometry={nodes.pCylinder3_pink_emeshon_0.geometry} material={materials.pink_emeshon} /> */}
                   </group>
+                  {/* light */}
+
+                  {/* book */}
                   <group name="pCube35">
-                    <mesh castShadow receiveShadow name="pCube35_white_0" geometry={nodes.pCube35_white_0.geometry} material={materials.white} />
-                    <mesh castShadow receiveShadow name="pCube35_aiStandardSurface25_0" geometry={nodes.pCube35_aiStandardSurface25_0.geometry} material={materials.aiStandardSurface25} />
+                    {/* <mesh castShadow receiveShadow name="pCube35_white_0" geometry={nodes.pCube35_white_0.geometry} material={materials.white} />
+                    <mesh castShadow receiveShadow name="pCube35_aiStandardSurface25_0" geometry={nodes.pCube35_aiStandardSurface25_0.geometry} material={materials.aiStandardSurface25} /> */}
                   </group>
+                  {/* book */}
+
+                  {/* Draw */}
                   <group name="polySurface107" position={[0, 0, -0.09]}>
                     <mesh castShadow receiveShadow name="polySurface107_wall_poster_0" geometry={nodes.polySurface107_wall_poster_0.geometry} material={materials.wall_poster} />
                   </group>
+                  {/* Draw */}
+
+                  {/* light */}
                   <group name="pCylinder6">
-                    <mesh castShadow receiveShadow name="pCylinder6_black_0" geometry={nodes.pCylinder6_black_0.geometry} material={materials.black} />
-                    <mesh castShadow receiveShadow name="pCylinder6_blue_emeshon_0" geometry={nodes.pCylinder6_blue_emeshon_0.geometry} material={materials.blue_emeshon} />
+                    {/* <mesh castShadow receiveShadow name="pCylinder6_black_0" geometry={nodes.pCylinder6_black_0.geometry} material={materials.black} />
+                    <mesh castShadow receiveShadow name="pCylinder6_blue_emeshon_0" geometry={nodes.pCylinder6_blue_emeshon_0.geometry} material={materials.blue_emeshon} /> */}
                   </group>
+                  {/* light */}
+
+                  {/* book */}
                   <group name="pCube28">
-                    <mesh castShadow receiveShadow name="pCube28_lambert1_0" geometry={nodes.pCube28_lambert1_0.geometry} material={materials.lambert1} />
+                    {/* <mesh castShadow receiveShadow name="pCube28_lambert1_0" geometry={nodes.pCube28_lambert1_0.geometry} material={materials.lambert1} /> */}
                   </group>
+                  {/* book */}
+
+                  {/* plate */}
                   <group name="polySurface101" position={[-3.94, 1.11, 4.93]} rotation={[0, -0.66, 0]} scale={[1.1, 0.2, 1.1]}>
-                    <mesh castShadow receiveShadow name="polySurface101_cups_0" geometry={nodes.polySurface101_cups_0.geometry} material={materials.cups} />
+                    {/* <mesh castShadow receiveShadow name="polySurface101_cups_0" geometry={nodes.polySurface101_cups_0.geometry} material={materials.cups} /> */}
                   </group>
+                  {/* plate */}
 
                   {/* Stairs */}
                   <group name="polySurface98">
@@ -77,18 +104,31 @@ export function Room2(props) {
                   </group>
                    {/* Floor */}
 
+                  {/* sofa */}
                   <group name="polySurface130">
                     <mesh castShadow receiveShadow name="polySurface130_sofa_0" geometry={nodes.polySurface130_sofa_0.geometry} material={materials.sofa} />
                   </group>
+                  {/* sofa */}
+
+                  {/* boxes */}
                   <group name="pCube186">
-                    <mesh castShadow receiveShadow name="pCube186_boxes_0" geometry={nodes.pCube186_boxes_0.geometry} material={materials.boxes} />
+                    <mesh castShadow receiveShadow name="pCube186_boxes_0" geometry={nodes.pCube186_boxes_0.geometry} material={materials.boxes}>
+                      <MeshMaterial color={"#CBAC88"} />
+                    </mesh>
                   </group>
+                  {/* boxes */}
+
+                  {/* plate */}
                   <group name="pCylinder1">
                     <mesh castShadow receiveShadow name="pCylinder1_white_0" geometry={nodes.pCylinder1_white_0.geometry} material={materials.white} />
                   </group>
+                  {/* plate */}
+
+                  {/* plug */}
                   <group name="pCube167">
                     <mesh castShadow receiveShadow name="pCube167_switches_0" geometry={nodes.pCube167_switches_0.geometry} material={materials.switches} />
                   </group>
+                  {/* plug */}
 
                   {/* Top Screen */}
                   <group name="pCube189">
@@ -116,28 +156,48 @@ export function Room2(props) {
                   </group>
                   {/* Top Screen */}
 
+                  {/* chair */}
                   <group name="polySurface88" position={[-0.87, 0.01, -0.27]} rotation={[0, -0.66, 0]} scale={1.1}>
                     <mesh castShadow receiveShadow name="polySurface88_black_0" geometry={nodes.polySurface88_black_0.geometry} material={materials.black} />
                   </group>
+                  {/* chair */}
+                  
+                  {/* light */}
                   <group name="pCylinder7">
-                    <mesh castShadow receiveShadow name="pCylinder7_black_0" geometry={nodes.pCylinder7_black_0.geometry} material={materials.black} />
-                    <mesh castShadow receiveShadow name="pCylinder7_blue_emeshon_0" geometry={nodes.pCylinder7_blue_emeshon_0.geometry} material={materials.blue_emeshon} />
+                    {/* <mesh castShadow receiveShadow name="pCylinder7_black_0" geometry={nodes.pCylinder7_black_0.geometry} material={materials.black} />
+                    <mesh castShadow receiveShadow name="pCylinder7_blue_emeshon_0" geometry={nodes.pCylinder7_blue_emeshon_0.geometry} material={materials.blue_emeshon} /> */}
                   </group>
+                  {/* light */}
+
+                  {/* desk */}
                   <group name="pCube1">
                     <mesh castShadow receiveShadow name="pCube1_big_tabel_wood_0" geometry={nodes.pCube1_big_tabel_wood_0.geometry} material={materials.big_tabel_wood} />
                   </group>
+                  {/* desk */}
+
+                  {/* cup */}
                   <group name="pCube31">
-                    <mesh castShadow receiveShadow name="pCube31_lambert1_0" geometry={nodes.pCube31_lambert1_0.geometry} material={materials.lambert1} />
+                    {/* <mesh castShadow receiveShadow name="pCube31_lambert1_0" geometry={nodes.pCube31_lambert1_0.geometry} material={materials.lambert1} /> */}
                   </group>
+                  {/* cup */}
+
+                  {/* window */}
                   <group name="polySurface96">
                     <mesh castShadow receiveShadow name="polySurface96_aiStandardSurface22_0" geometry={nodes.polySurface96_aiStandardSurface22_0.geometry} material={materials.aiStandardSurface22} />
                   </group>
+                  {/* window */}
+
+                  {/* cable */}
                   <group name="polySurface119">
                     <mesh castShadow receiveShadow name="polySurface119_aiStandardSurface5_0" geometry={nodes.polySurface119_aiStandardSurface5_0.geometry} material={materials.aiStandardSurface5} />
                   </group>
+                  {/* cable */}
+
+                  {/* plug */}
                   <group name="pCube168">
                     <mesh castShadow receiveShadow name="pCube168_switches_0" geometry={nodes.pCube168_switches_0.geometry} material={materials.switches} />
                   </group>
+                  {/* plug */}
 
                   {/* Floor */}
                   <group name="polySurface126">
@@ -145,63 +205,116 @@ export function Room2(props) {
                   </group>
                    {/* Floor */}
 
+                  {/* mouse */}
                   <group name="pCube160">
                     <mesh castShadow receiveShadow name="pCube160_white_0" geometry={nodes.pCube160_white_0.geometry} material={materials.white} />
                   </group>
+                  {/* mouse */}
+
+                  {/* plug */}
                   <group name="pCube172">
                     <mesh castShadow receiveShadow name="pCube172_black_0" geometry={nodes.pCube172_black_0.geometry} material={materials.black} />
                   </group>
+                  {/* plug */}
+
+                  {/* sofa */}
                   <group name="pCube12">
                     <mesh castShadow receiveShadow name="pCube12_sofa_legs_0" geometry={nodes.pCube12_sofa_legs_0.geometry} material={materials.sofa_legs} />
                   </group>
+                  {/* sofa */}
+
+                  {/* desk */}
                   <group name="polySurface152">
                     <mesh castShadow receiveShadow name="polySurface152_big_tabel_wood_0" geometry={nodes.polySurface152_big_tabel_wood_0.geometry} material={materials.big_tabel_wood} />
                   </group>
+                  {/* desk */}
+
+                  {/* desk */}
                   <group name="pCube9">
                     <mesh castShadow receiveShadow name="pCube9_tabel_wood_0" geometry={nodes.pCube9_tabel_wood_0.geometry} material={materials.tabel_wood} />
                   </group>
+                  {/* desk */}
+
+                  {/* cup */}
                   <group name="pCube32">
-                    <mesh castShadow receiveShadow name="pCube32_lambert1_0" geometry={nodes.pCube32_lambert1_0.geometry} material={materials.lambert1} />
+                    {/* <mesh castShadow receiveShadow name="pCube32_lambert1_0" geometry={nodes.pCube32_lambert1_0.geometry} material={materials.lambert1} /> */}
                   </group>
+                  {/* cup */}
+
+                  {/* draw */}
                   <group name="polySurface108" position={[0, 0, -0.09]}>
                     <mesh castShadow receiveShadow name="polySurface108_aiStandardSurface16_0" geometry={nodes.polySurface108_aiStandardSurface16_0.geometry} material={materials.aiStandardSurface16} />
                     <mesh castShadow receiveShadow name="polySurface108_lambert1_0" geometry={nodes.polySurface108_lambert1_0.geometry} material={materials.lambert1} />
                   </group>
+                  {/* draw */}
+
+                  {/* ??? */}
                   <group name="pCube33">
-                    <mesh castShadow receiveShadow name="pCube33_white_0" geometry={nodes.pCube33_white_0.geometry} material={materials.white} />
+                    {/* <mesh castShadow receiveShadow name="pCube33_white_0" geometry={nodes.pCube33_white_0.geometry} material={materials.white} /> */}
                   </group>
+                  {/* ??? */}
+
+                  {/* plug */}
                   <group name="pCube171">
                     <mesh castShadow receiveShadow name="pCube171_black_0" geometry={nodes.pCube171_black_0.geometry} material={materials.black} />
                   </group>
+                  {/* plug */}
+
+                  {/* cable */}
                   <group name="pCube184">
                     <mesh castShadow receiveShadow name="pCube184_aiStandardSurface28_0" geometry={nodes.pCube184_aiStandardSurface28_0.geometry} material={materials.aiStandardSurface28} />
                   </group>
+                  {/* cable */}
+
+                  {/* plug */}
                   <group name="pCube173">
                     <mesh castShadow receiveShadow name="pCube173_black_0" geometry={nodes.pCube173_black_0.geometry} material={materials.black} />
                   </group>
+                  {/* plug */}
+
+                  {/* fridge */}
                   <group name="polySurface21">
                     <mesh castShadow receiveShadow name="polySurface21_white_0" geometry={nodes.polySurface21_white_0.geometry} material={materials.white} />
                   </group>
+                  {/* fridge */}
+
+                  {/* book */}
                   <group name="pCube34">
                     <mesh castShadow receiveShadow name="pCube34_white_0" geometry={nodes.pCube34_white_0.geometry} material={materials.white} />
                     <mesh castShadow receiveShadow name="pCube34_black_0" geometry={nodes.pCube34_black_0.geometry} material={materials.black} />
                   </group>
+                  {/* book */}
+
+                  {/* plug */}
                   <group name="pCube175">
                     <mesh castShadow receiveShadow name="pCube175_black_0" geometry={nodes.pCube175_black_0.geometry} material={materials.black} />
                   </group>
+                  {/* plug */}
+
+                  {/* bin */}
                   <group name="pCube17">
                     <mesh castShadow receiveShadow name="pCube17_white_0" geometry={nodes.pCube17_white_0.geometry} material={materials.white} />
                   </group>
+                   {/* bin */}
+
+                  {/* light */}
                   <group name="pCylinder9">
-                    <mesh castShadow receiveShadow name="pCylinder9_black_0" geometry={nodes.pCylinder9_black_0.geometry} material={materials.black} />
-                    <mesh castShadow receiveShadow name="pCylinder9_pink_emeshon_0" geometry={nodes.pCylinder9_pink_emeshon_0.geometry} material={materials.pink_emeshon} />
+                    {/* <mesh castShadow receiveShadow name="pCylinder9_black_0" geometry={nodes.pCylinder9_black_0.geometry} material={materials.black} /> */}
+                    {/* <mesh castShadow receiveShadow name="pCylinder9_pink_emeshon_0" geometry={nodes.pCylinder9_pink_emeshon_0.geometry} material={materials.pink_emeshon} /> */}
                   </group>
+                  {/* light */}
+
+                  {/* mouse */}
                   <group name="pCube161">
                     <mesh castShadow receiveShadow name="pCube161_lambert1_0" geometry={nodes.pCube161_lambert1_0.geometry} material={materials.lambert1} />
                   </group>
+                  {/* mouse */}
+
+                  {/* draw */}
                   <group name="polySurface109" position={[0, 0, -0.09]}>
                     <mesh castShadow receiveShadow name="polySurface109_aiStandardSurface18_0" geometry={nodes.polySurface109_aiStandardSurface18_0.geometry} material={materials.aiStandardSurface18} />
                   </group>
+                  {/* draw */}
 
                   {/* Back chair */}
                   <group name="polySurface87" position={[-0.87, 0.01, -0.27]} rotation={[0, -0.66, 0]} scale={1.1}>
@@ -209,9 +322,11 @@ export function Room2(props) {
                   </group>
                   {/* Back chair */}
 
+                  {/* plug */}
                   <group name="pCube169">
                     <mesh castShadow receiveShadow name="pCube169_switches_0" geometry={nodes.pCube169_switches_0.geometry} material={materials.switches} />
                   </group>
+                  {/* plug */}
 
                   {/* Back chair */}
                   <group name="polySurface86">
@@ -225,22 +340,36 @@ export function Room2(props) {
                   </group>
                   {/* Stairs */}
 
+                  {/* light */}
                   <group name="pCylinder8">
-                    <mesh castShadow receiveShadow name="pCylinder8_black_0" geometry={nodes.pCylinder8_black_0.geometry} material={materials.black} />
-                    <mesh castShadow receiveShadow name="pCylinder8_blue_emeshon_0" geometry={nodes.pCylinder8_blue_emeshon_0.geometry} material={materials.blue_emeshon} />
+                    {/* <mesh castShadow receiveShadow name="pCylinder8_black_0" geometry={nodes.pCylinder8_black_0.geometry} material={materials.black} /> */}
+                    {/* <mesh castShadow receiveShadow name="pCylinder8_blue_emeshon_0" geometry={nodes.pCylinder8_blue_emeshon_0.geometry} material={materials.blue_emeshon} /> */}
                   </group>
+                  {/* light */}
+
+                  {/* cup */}
                   <group name="polySurface94" position={[-0.87, 0.01, -0.27]} rotation={[0, -0.66, 0]} scale={1.1}>
-                    <mesh castShadow receiveShadow name="polySurface94_cups_0" geometry={nodes.polySurface94_cups_0.geometry} material={materials.cups} />
+                    {/* <mesh castShadow receiveShadow name="polySurface94_cups_0" geometry={nodes.polySurface94_cups_0.geometry} material={materials.cups} /> */}
                   </group>
+                  {/* cup */}
+
+                  {/* keyboard */}
                   <group name="polySurface207">
                     <mesh castShadow receiveShadow name="polySurface207_white_0" geometry={nodes.polySurface207_white_0.geometry} material={materials.white} />
                   </group>
+                  {/* keyboard */}
+
+                  {/* desk */}
                   <group name="polySurface211">
                     <mesh castShadow receiveShadow name="polySurface211_black_0" geometry={nodes.polySurface211_black_0.geometry} material={materials.black} />
                   </group>
+                  {/* desk */}
+
+                  {/* chair */}
                   <group name="polySurface61">
                     <mesh castShadow receiveShadow name="polySurface61_black_0" geometry={nodes.polySurface61_black_0.geometry} material={materials.black} />
                   </group>
+                  {/* chair */}
 
                   {/* Bottom screen */}
                   <group name="polySurface208">
@@ -271,12 +400,17 @@ export function Room2(props) {
                   </group>
                   {/* Stairs */}
 
+                  {/* ??? */}
                   <group name="polySurface22" position={[3.22, -44.57, -1.28]} scale={[0.27, 27.84, 0.67]}>
-                    <mesh castShadow receiveShadow name="polySurface22_white_0" geometry={nodes.polySurface22_white_0.geometry} material={materials.white} />
+                    {/* <mesh castShadow receiveShadow name="polySurface22_white_0" geometry={nodes.polySurface22_white_0.geometry} material={materials.white} /> */}
                   </group>
+                  {/* ??? */}
+
+                  {/* walls */}
                   <group name="polySurface127">
                     <mesh castShadow receiveShadow name="polySurface127_concret_0" geometry={nodes.polySurface127_concret_0.geometry} material={materials.concret} />
                   </group>
+                  {/* walls */}
                 </group>
               </group>
             </group>
@@ -365,4 +499,14 @@ const TextScreen = (props) => {
 
 const getRandomArbitrary = (min, max) => {
   return Math.random() * ( max - min ) + min;
+}
+
+const MeshMaterial = (props) => {
+  return (
+    <meshStandardMaterial 
+      {...props}
+      metalness={0}
+      roughness={1}
+    />
+  )
 }

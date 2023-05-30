@@ -35,23 +35,23 @@ import BoxCollider from "./BoxCollider";
 
 const SceneCanvas = () => {
 
-  const { p_red, p_green, p_blue, r_red, r_green, r_blue, scale, text, minAzimuthAngle, maxAzimuthAngle, hidden } = useControls({
-    position: folder({
-      p_red: { value: -2, min: -5, max: 5, step: 0.1 },
-      p_green: { value: 1.6, min: -5, max: 5, step: 0.1 },
-      p_blue: { value: 1.7, min: -5, max: 5, step: 0.1 },
-    }),
-    rotation: folder({
-      r_red: { value: -0.5, min: -5, max: 5, step: 0.1 },
-      r_green: { value: 1.6, min: -5, max: 5, step: 0.1 },
-      r_blue: { value: 0.5, min: -5, max: 5, step: 0.1 },
-    }),
-    scale: { value: 0.3, min: -5, max: 5, step: 0.1 },
-    text: "Hi, I'm Gabriel",
-    minAzimuthAngle: { value: 6, min: -20, max: 20, step: 0.1 },
-    maxAzimuthAngle: { value: 6, min: -10, max: 10, step: 0.1 },
-    hidden: true
-  })
+  // const { p_red, p_green, p_blue, r_red, r_green, r_blue, scale, text, minAzimuthAngle, maxAzimuthAngle, hidden } = useControls({
+  //   position: folder({
+  //     p_red: { value: -2, min: -5, max: 5, step: 0.1 },
+  //     p_green: { value: 1.6, min: -5, max: 5, step: 0.1 },
+  //     p_blue: { value: 1.7, min: -5, max: 5, step: 0.1 },
+  //   }),
+  //   rotation: folder({
+  //     r_red: { value: -0.5, min: -5, max: 5, step: 0.1 },
+  //     r_green: { value: 1.6, min: -5, max: 5, step: 0.1 },
+  //     r_blue: { value: 0.5, min: -5, max: 5, step: 0.1 },
+  //   }),
+  //   scale: { value: 0.3, min: -5, max: 5, step: 0.1 },
+  //   text: "Hi, I'm Gabriel",
+  //   minAzimuthAngle: { value: 6, min: -20, max: 20, step: 0.1 },
+  //   maxAzimuthAngle: { value: 6, min: -10, max: 10, step: 0.1 },
+  //   hidden: true
+  // })
 
 
 
@@ -63,7 +63,8 @@ const SceneCanvas = () => {
         position: [5, 4, 5], 
         far: 1000,
         fov: 18,
-        // fov: 55
+        // fov:25
+        // fov: 50
         }
         }
       gl={{ preserveDrawingBuffer: true }}
@@ -84,7 +85,7 @@ const SceneCanvas = () => {
           maxPolarAngle={Math.PI - Math.PI / 2}
       /> */}
         
-        {hidden && (
+        {/* {hidden && ( */}
         <group>
 
           <mesh position={[0, 0.15, 0]} receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
@@ -179,7 +180,8 @@ const SceneCanvas = () => {
     
           
           {/* <axesHelper args={[2]} position={[0, 0.2, 0]}/> */}
-        </group> )}
+        </group> 
+        {/* )} */}
         
       </Suspense>
       <Preload all />
