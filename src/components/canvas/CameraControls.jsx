@@ -16,7 +16,7 @@ const CameraControls = () => {
     //   target: new THREE.Vector3(-0.6, 1.1, -0.2),
     // },
     [CameraModes.BOOK]: {
-      position: new THREE.Vector3(0, 1.4, 1),
+      position: new THREE.Vector3(0.2, 1.4, 1.2),
       target: new THREE.Vector3(-1, 0.9, 0.5),
     },
     [CameraModes.BACK]: {
@@ -31,7 +31,7 @@ const CameraControls = () => {
     } else {
       orbitControls.current.enableRotate = true
     }
-    console.log(orbitControls.current)
+    // console.log(orbitControls.current)
   })
   useFrame((state, delta) => {
     if(cameraMode == CameraModes.FREE){
@@ -40,10 +40,6 @@ const CameraControls = () => {
     state.camera.position.lerp(cameraPositions[cameraMode].position, delta * 3)
    orbitControls.current.target.lerp(cameraPositions[cameraMode].target, delta * 3)
   });
-
-  useEffect(() => {
-    console.log(cameraMode)
-  })
 
   return(
     <>
