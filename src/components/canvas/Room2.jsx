@@ -7,7 +7,7 @@ Source: https://sketchfab.com/3d-models/room-c006e44a66a94d099297133a466d42f6
 Title: room
 */
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useGLTF, RenderTexture, Text, PerspectiveCamera, Decal, useTexture } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 

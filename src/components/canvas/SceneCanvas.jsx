@@ -1,28 +1,23 @@
 import { Suspense, useEffect, useState, useRef } from "react";
 import * as THREE from "three";
-import { Canvas, useThree } from "@react-three/fiber";
-import { 
-  OrbitControls, 
+import { Canvas } from "@react-three/fiber";
+import {  
   Preload, 
   MeshReflectorMaterial,
   BakeShadows,
   Effects,
   Environment,
   Text,
-  PresentationControls,
 } from "@react-three/drei";
 
 import CanvasLoader from '../Loader'
 
-import { Robot } from "./RobotWith3Anim";
 import { Gpt } from "./Gpt"
 
-import Room  from "./Room";
 import { Room2 }  from "./Room2";
 import Book from "./Book";
 import { Dev } from "./DevLaying";
 import Light from "./Light";
-import Text3d from "./Text3d";
 
 import CameraControls from "./CameraControls";
 
@@ -30,27 +25,53 @@ import { folder, useControls } from "leva"
 
 import fontUrl from "./ElevateSans.otf"
 
-import { EffectComposer, Bloom, DepthOfField } from '@react-three/postprocessing'
 import BoxCollider from "./BoxCollider";
 
 const SceneCanvas = () => {
 
-  // const { p_red, p_green, p_blue, r_red, r_green, r_blue, scale, text, minAzimuthAngle, maxAzimuthAngle, hidden } = useControls({
-  //   position: folder({
-  //     p_red: { value: -2, min: -5, max: 5, step: 0.1 },
-  //     p_green: { value: 1.6, min: -5, max: 5, step: 0.1 },
-  //     p_blue: { value: 1.7, min: -5, max: 5, step: 0.1 },
-  //   }),
-  //   rotation: folder({
-  //     r_red: { value: -0.5, min: -5, max: 5, step: 0.1 },
-  //     r_green: { value: 1.6, min: -5, max: 5, step: 0.1 },
-  //     r_blue: { value: 0.5, min: -5, max: 5, step: 0.1 },
-  //   }),
-  //   scale: { value: 0.3, min: -5, max: 5, step: 0.1 },
-  //   text: "Hi, I'm Gabriel",
-  //   minAzimuthAngle: { value: 6, min: -20, max: 20, step: 0.1 },
-  //   maxAzimuthAngle: { value: 6, min: -10, max: 10, step: 0.1 },
-  //   hidden: true
+  // const [ isMobile, setIsMobile ] = useState(false)
+
+  // useEffect(() => {
+  //    const mediaQuery = window.matchMedia('(max-width: 500px)');
+  //   //  console.log(window.innerWidth)
+  //    setIsMobile(mediaQuery.matches)
+
+     
+
+  //    const handleMediaQueryChange = (event) =>{
+  //     setIsMobile(event.matches)
+  //     // console.log(mediaQuery)
+  //     console.log(window.innerWidth)
+  //    }
+
+  //    addEventListener("resize", (event) => {
+  //     // console.log(window.innerWidth)
+  //     setWidth(window.innerWidth)
+  //     // console.log(camera)
+
+  //    })
+
+  //    mediaQuery.addEventListener('change', handleMediaQueryChange);
+  // }, [])
+
+  // const { p_red, p_green, p_blue, r_red, r_green, r_blue, scale, text, minAzimuthAngle, maxAzimuthAngle, hidden, fov, zoom } = useControls({
+  //   // position: folder({
+  //   //   p_red: { value: 0, min: -10, max: 10, step: 0.1 },
+  //   //   p_green: { value: 0, min: -10, max: 10, step: 0.1 },
+  //   //   p_blue: { value: 0, min: -10, max: 10, step: 0.1 },
+  //   // }),
+  //   // rotation: folder({
+  //   //   r_red: { value: -0.5, min: -5, max: 5, step: 0.1 },
+  //   //   r_green: { value: 1.6, min: -5, max: 5, step: 0.1 },
+  //   //   r_blue: { value: 0.5, min: -5, max: 5, step: 0.1 },
+  //   // }),
+  //   // scale: { value: 0.3, min: -5, max: 5, step: 0.1 },
+  //   // text: "Hi, I'm Gabriel",
+  //   // minAzimuthAngle: { value: 6, min: -20, max: 20, step: 0.1 },
+  //   // maxAzimuthAngle: { value: 6, min: -10, max: 10, step: 0.1 },
+  //   // hidden: true
+  //   fov: { value: 18, min: 18, max: 60, step: 0.1 },
+  //   zoom: { value: 1, min: 0.01, max: 1, step: 0.01 },
   // })
 
 
@@ -60,11 +81,13 @@ const SceneCanvas = () => {
       // frameloop="demand"
       shadows
       camera={ { 
-        position: [5, 4, 5], 
-        far: 1000,
+        position: [5, 4, 5] , 
+        // far: 1000,
+        // zoom: zoom,
+        // fov: fov,
         fov: 18,
         // fov:25
-        // fov: 50
+        // fov: 55
         }
         }
       gl={{ preserveDrawingBuffer: true }}
@@ -75,18 +98,12 @@ const SceneCanvas = () => {
         <color attach="background" args={["black"]} />
         <hemisphereLight intensity={0.2} color={'black'}/>
         <Environment preset="night" />
-        <CameraControls />
-        {/* <OrbitControls 
-          target={[-0.6, 1.1, -0.2]}
-          enableZoom={false} 
-          minAzimuthAngle={-Math.PI / -10}
-          maxAzimuthAngle={Math.PI / 3}
-          minPolarAngle={Math.PI / 4}
-          maxPolarAngle={Math.PI - Math.PI / 2}
-      /> */}
+        {/* <CameraControls />: */}
         
         {/* {hidden && ( */}
-        <group>
+        <group scale={1}>
+
+          <CameraControls />
 
           <mesh position={[0, 0.15, 0]} receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
             <planeGeometry args={[50, 50]} />
@@ -166,7 +183,9 @@ const SceneCanvas = () => {
             scale={1.1}
           /> */}
           {/* <Room /> */}
+
           <Room2 />
+
           <Dev
             position={[-1.5, 0.55, 0.5]}
             rotation={[0, 0, 0]}
