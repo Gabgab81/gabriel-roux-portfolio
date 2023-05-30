@@ -14,7 +14,6 @@ export function Dev(props) {
 
   useEffect(() => {
     actions["LayingIdle"].play()
-    console.log(materials)
   })
 
   return (
@@ -35,10 +34,4 @@ export function Dev(props) {
   )
 }
 
-<meshStandardMaterial 
-          metalness={0.2} 
-          roughness={0.8}   
-          color={"white"} 
-        />
-
-useGLTF.preload('/DevLaying.glb')
+useGLTF.preload('/models/DevLaying.glb')
