@@ -4,17 +4,17 @@ import { CameraModes, useFirstScene } from "../../contexts/FirstSceneContext";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useRef, useState } from 'react';
 
-import { folder, useControls } from "leva"
+// import { folder, useControls } from "leva"
 
-const CameraControls = ({isMobile}) => {
+const CameraControls = () => {
 
   // const [ width, setWidth ] = useState(window.innerWidth)
 
-  const { fov, zoom } = useControls({
+  // const { fov, zoom } = useControls({
    
-    fov: { value: 18, min: 18, max: 60, step: 0.1 },
-    zoom: { value: 1, min: 0.01, max: 1, step: 0.01 },
-  })
+  //   fov: { value: 18, min: 18, max: 60, step: 0.1 },
+  //   zoom: { value: 1, min: 0.01, max: 1, step: 0.01 },
+  // })
 
   const { cameraMode, setCameraMode } = useFirstScene();
 
@@ -68,6 +68,7 @@ const CameraControls = ({isMobile}) => {
     }
 
     handleZoom()
+    camera.updateProjectionMatrix();
 
     const handleMediaQuery500Change = (event) =>{
       setIs500(event.matches);
@@ -86,9 +87,9 @@ const CameraControls = ({isMobile}) => {
       handleZoom()
     }
 
-    // console.log(camera.zoom)
+    console.log(camera.zoom)
 
-    // console.log(is500, is1000, is1500)
+    console.log(is500, is1000, is1500)
 
     // console.log(window.innerWidth)
     mediaQuery500.addEventListener('change', handleMediaQuery500Change);
@@ -102,8 +103,14 @@ const CameraControls = ({isMobile}) => {
     //   handleZoom()
     //  })
 
+    return () => {
+      mediaQuery500.removeEventListener('change', handleMediaQuery500Change);
+      mediaQuery750.removeEventListener('change', handleMediaQuery750Change);
+      mediaQuery1000.removeEventListener('change', handleMediaQuery1000Change);
+      mediaQuery1500.removeEventListener('change', handleMediaQuery1500Change);
+    }
      
-  }, [camera, is500, is1000, is1500, setIs500, setIs1000, setIs1500])
+  }, [is500, is750, is1000, is1500, camera.zoom, setIs500, setIs750, setIs1000, setIs1500])
 
   useEffect(() => {
     if(cameraMode == CameraModes.BOOK){
