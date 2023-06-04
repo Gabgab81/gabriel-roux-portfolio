@@ -87,9 +87,9 @@ const CameraControls = () => {
       handleZoom()
     }
 
-    console.log(camera.zoom)
+    // console.log(camera.zoom)
 
-    console.log(is500, is1000, is1500)
+    // console.log(is500, is1000, is1500)
 
     // console.log(window.innerWidth)
     mediaQuery500.addEventListener('change', handleMediaQuery500Change);

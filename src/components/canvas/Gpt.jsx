@@ -102,7 +102,7 @@ export function Gpt(props) {
       <group name="Scene">
         <group name="Armature" scale={0.01}>
           <primitive object={nodes.mixamorigHips}/>
-            <skinnedMesh onClick={() => console.log("gpt")} castShadow receiveShadow name="Alpha_Joints" geometry={nodes.Alpha_Joints.geometry} material={materials.Alpha_Joints_MAT} skeleton={nodes.Alpha_Joints.skeleton}>
+          <skinnedMesh onClick={() => console.log("gpt")} castShadow receiveShadow name="Alpha_Joints" geometry={nodes.Alpha_Joints.geometry} material={materials.Alpha_Joints_MAT} skeleton={nodes.Alpha_Joints.skeleton}>
             <meshStandardMaterial 
               metalness={1} 
               roughness={0.1} 
