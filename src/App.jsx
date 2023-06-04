@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 
-import { Navbar, Hero, Footer } from "./components";
+import { Navbar, Hero, Footer, About } from "./components";
 
 const App = () => {
 
@@ -10,6 +10,7 @@ const App = () => {
         <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
           <Navbar />
           <Hero />
+          <About />
           <Footer />
         </div> 
       </div>

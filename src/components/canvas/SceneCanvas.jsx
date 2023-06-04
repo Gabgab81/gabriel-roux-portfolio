@@ -10,6 +10,10 @@ import {
   Text,
 } from "@react-three/drei";
 
+// import { LayerMaterial, Depth, Noise } from 'lamina'
+
+import { Bloom, EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
+
 import CanvasLoader from '../Loader'
 
 import { Gpt } from "./Gpt"
@@ -54,25 +58,25 @@ const SceneCanvas = () => {
   //    mediaQuery.addEventListener('change', handleMediaQueryChange);
   // }, [])
 
-  const { p_red, p_green, p_blue, r_red, r_green, r_blue, scale, text, minAzimuthAngle, maxAzimuthAngle, hidden, fov, zoom } = useControls({
-    position: folder({
-      p_red: { value: 0, min: -10, max: 10, step: 0.1 },
-      p_green: { value: 0, min: -10, max: 10, step: 0.1 },
-      p_blue: { value: 0, min: -10, max: 10, step: 0.1 },
-    }),
-    // rotation: folder({
-    //   r_red: { value: -0.5, min: -5, max: 5, step: 0.1 },
-    //   r_green: { value: 1.6, min: -5, max: 5, step: 0.1 },
-    //   r_blue: { value: 0.5, min: -5, max: 5, step: 0.1 },
-    // }),
-    // scale: { value: 0.3, min: -5, max: 5, step: 0.1 },
-    // text: "Hi, I'm Gabriel",
-    // minAzimuthAngle: { value: 6, min: -20, max: 20, step: 0.1 },
-    // maxAzimuthAngle: { value: 6, min: -10, max: 10, step: 0.1 },
-    // hidden: true
-    // fov: { value: 18, min: 18, max: 60, step: 0.1 },
-    // zoom: { value: 1, min: 0.01, max: 1, step: 0.01 },
-  })
+  // const { p_red, p_green, p_blue, r_red, r_green, r_blue, scale, text, minAzimuthAngle, maxAzimuthAngle, hidden, fov, zoom } = useControls({
+  //   position: folder({
+  //     p_red: { value: 0, min: -10, max: 10, step: 0.1 },
+  //     p_green: { value: 0, min: -10, max: 10, step: 0.1 },
+  //     p_blue: { value: 0, min: -10, max: 10, step: 0.1 },
+  //   }),
+  //   // rotation: folder({
+  //   //   r_red: { value: -0.5, min: -5, max: 5, step: 0.1 },
+  //   //   r_green: { value: 1.6, min: -5, max: 5, step: 0.1 },
+  //   //   r_blue: { value: 0.5, min: -5, max: 5, step: 0.1 },
+  //   // }),
+  //   // scale: { value: 0.3, min: -5, max: 5, step: 0.1 },
+  //   // text: "Hi, I'm Gabriel",
+  //   // minAzimuthAngle: { value: 6, min: -20, max: 20, step: 0.1 },
+  //   // maxAzimuthAngle: { value: 6, min: -10, max: 10, step: 0.1 },
+  //   // hidden: true
+  //   // fov: { value: 18, min: 18, max: 60, step: 0.1 },
+  //   // zoom: { value: 1, min: 0.01, max: 1, step: 0.01 },
+  // })
 
 
 
@@ -95,6 +99,7 @@ const SceneCanvas = () => {
       dpr={window.devicePixelRatio}
     >
       <Suspense fallback={<CanvasLoader />}>
+
         <color attach="background" args={["black"]} />
         <hemisphereLight intensity={0.1} color={'black'}/>
         <Environment preset="night" />
@@ -207,6 +212,11 @@ const SceneCanvas = () => {
       <Effects />
       <BakeShadows />
 
+      <EffectComposer>
+        <Bloom luminanceThreshold={0} luminanceSmoothing={2} height={300} />
+        <Noise opacity={0.1} />
+        <Vignette eskil={false} offset={0.1} darkness={1.1} />
+      </EffectComposer>
     </Canvas>
   )
 }
