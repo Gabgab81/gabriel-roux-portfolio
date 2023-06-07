@@ -6,7 +6,6 @@ import { Tilt } from "react-tilt";
 import { SectionWrapper } from "../hoc"
 
 const ServiceCard = ({ index, title, icon }) => {
-  console.log(title)
 
   let keyImg = icon
   
