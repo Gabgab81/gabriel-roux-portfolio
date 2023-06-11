@@ -3,6 +3,7 @@ import Hero from './Hero';
 import Footer from './Footer';
 import About from './About';
 import Works from './Works';
+import Contact from './Contact';
 
 import Loader from './Loader';
 
@@ -13,4 +14,5 @@ export {
   About,
   Loader,
   Works,
+  Contact,
 }

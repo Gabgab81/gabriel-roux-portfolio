@@ -102,7 +102,7 @@ const SceneCanvas = () => {
 
         <color attach="background" args={["black"]} />
         <hemisphereLight intensity={0.1} color={'black'}/>
-        <Environment preset="night" />
+        {/* <Environment preset="night" /> */}
         {/* <CameraControls />: */}
         
         {/* {hidden && ( */}
@@ -182,13 +182,7 @@ const SceneCanvas = () => {
             rotation={[0, 15.1, 0]}
             scale={1.1}
           />
-          {/* <Robot
-            position={[-0.25, 0.19, -0.7]}
-            rotation={[0, 15, 0]}
-            scale={1.1}
-          /> */}
-          {/* <Room /> */}
-
+      
           <Room2 />
 
           <Dev
@@ -201,9 +195,7 @@ const SceneCanvas = () => {
             rotation={[-0.4, 1.1, 0.3]}
             scale={0.3}
           />
-    
-          
-          {/* <axesHelper args={[2]} position={[0, 0.2, 0]}/> */}
+
         </group> 
         {/* )} */}
         
