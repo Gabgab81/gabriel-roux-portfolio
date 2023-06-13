@@ -32,7 +32,7 @@ const Text3dWood = (props) => {
   woodTextureprops.normalMap.wrapS = woodTextureprops.normalMap.wrapT = THREE.RepeatWrapping;
   woodTextureprops.roughnessMap.wrapS = woodTextureprops.roughnessMap.wrapT = THREE.RepeatWrapping;
   woodTextureprops.aoMap.wrapS = woodTextureprops.aoMap.wrapT = THREE.RepeatWrapping;
-  console.log(props.text)
+  // console.log(props.text)
   return (
     <Text3D castShadow receiveShadow
       {...props} 
