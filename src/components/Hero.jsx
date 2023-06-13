@@ -1,7 +1,7 @@
 import { SceneCanvas } from './canvas';
 import { motion } from 'framer-motion'
 
-const Hero = () => {
+const Hero = (props) => {
   return (
     <section className='relative w-full  h-screen mx-auto'>
       {/* <div className={`${styles.paddingX} absolute inset-0

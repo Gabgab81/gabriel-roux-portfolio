@@ -12,7 +12,7 @@ const App = () => {
           {/* <Hero /> */}
           {/* <About /> */}
           <Works />
-          <Contact />
+          {/* <Contact /> */}
           {/* <Footer /> */}
         </div> 
       </div>
