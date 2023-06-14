@@ -243,7 +243,7 @@ const Works = () => {
       <>
         <Canvas gl={{ antialias: false }} dpr={[1, 1.5]} >
         <color attach="background" args={['#000']} />
-          <Text font="/BlackChancery.TTF" >
+          <Text fontSize={1.3} font="/fonts/BlackChancery.TTF" >
             Projects
             <meshStandardMaterial 
               color="white" 
@@ -252,7 +252,7 @@ const Works = () => {
               metalness={0.2}
             />
           </Text>
-          <Text fontSize={1.05} font="/fonts/BlackChancery.TTF" position={[0, 0.03, -0.1]} >
+          <Text fontSize={1.35} font="/fonts/BlackChancery.TTF" position={[0, 0.03, -0.1]} >
             Projects
             <meshStandardMaterial 
               color="black" 
@@ -279,4 +279,4 @@ const Works = () => {
   )
 }
 
-export default Works
+export default SectionWrapper(Works, "work")

@@ -1,9 +1,15 @@
+import { SectionWrapper } from '../hoc';
 import { SceneCanvas } from './canvas';
 import { motion } from 'framer-motion'
 
-const Hero = (props) => {
+const Hero = () => {
+ 
   return (
-    <section className='relative w-full  h-screen mx-auto'>
+    <section className='relative w-full  h-screen mx-auto'
+      // style={{
+      //   display: enable ? "relative" : "none"
+      // }}
+    >
       {/* <div className={`${styles.paddingX} absolute inset-0
       top-[120px] max-w-7xl mx-auto flex flex-row  items-start gap-5`}>
         
@@ -23,7 +29,7 @@ const Hero = (props) => {
 
       <SceneCanvas />
 
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center
+      {/* <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center
       items-center'>
         <a href='#about'>
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary
@@ -41,10 +47,10 @@ const Hero = (props) => {
             />
           </div>
         </a>
-      </div>
+      </div> */}
 
     </section>
   )
 }
 
-export default Hero
+export default SectionWrapper(Hero, "")
