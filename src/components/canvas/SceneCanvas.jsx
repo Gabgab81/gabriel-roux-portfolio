@@ -78,8 +78,6 @@ const SceneCanvas = () => {
   //   // zoom: { value: 1, min: 0.01, max: 1, step: 0.01 },
   // })
 
-
-
   return (
     <Canvas
       // frameloop="demand"

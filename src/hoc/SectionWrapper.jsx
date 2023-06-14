@@ -1,18 +1,22 @@
 // Highter order component
-import React, { Component } from 'react'
-
 import { styles } from '../styles';
+import { motion } from "framer-motion";
+
+import { useNavigation } from "../contexts/NavigationContext";
 
 
 const SectionWrapper = (Component, idName) => 
 function HOC() {
+  
   return (
-    <section className={`${styles.padding} max-w-7xl mx-auto relative z-0`}>
+    <motion.section 
+      // className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
+    >
       <span className='hash-span' id={idName}>
         &nbsp;
       </span>
-      <Component />
-    </section>
+      <Component enable={true} />
+    </motion.section>
   )
 }
 

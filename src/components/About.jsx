@@ -5,6 +5,7 @@ import SceneAboutCanvas from "./canvas/SceneAboutCanvas";
 import { Tilt } from "react-tilt";
 import { SectionWrapper } from "../hoc"
 
+
 const ServiceCard = ({ index, title, icon }) => {
 
   let keyImg = icon

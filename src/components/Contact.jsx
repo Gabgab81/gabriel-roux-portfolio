@@ -11,6 +11,7 @@ import { Moon } from './canvas/Moon'
 import { Billboard } from './canvas/Billboard'
 
 import { Bloom, EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
+import { SectionWrapper } from '../hoc'
 
 const Contact = () => {
 
@@ -74,4 +75,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default SectionWrapper(Contact, "contact")
