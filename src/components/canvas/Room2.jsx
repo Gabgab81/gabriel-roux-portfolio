@@ -9,16 +9,20 @@ Title: room
 
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, RenderTexture, Text, PerspectiveCamera, Decal, useTexture } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+import { useFrame, useLoader } from '@react-three/fiber'
 
 import { useFirstScene } from "../../contexts/FirstSceneContext";
+import { TextureLoader } from 'three/src/loaders/TextureLoader';
 
 export function Room2(props) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/room/scene.gltf')
 
-  const textures1 = useTexture("/images/CatPack.jpg")
-  const textures2 = useTexture("/images/CatPack2.jpg")
+  // const textures1 = useTexture("/images/CatPack.jpg")
+  // const textures2 = useTexture("/images/CatPack2.jpg")
+
+  const textures1 = useLoader(TextureLoader, "/images/CatPack.jpg")
+  const textures2 = useLoader(TextureLoader, "/images/CatPack2.jpg")
 
   //Context
   const { animationIndex  } = useFirstScene();
