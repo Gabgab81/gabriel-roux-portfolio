@@ -27,7 +27,6 @@ const Book = (props) => {
         // position={[0, 0, 0]}
         onClick={() => {
           setCameraMode( (cameraMode == (CameraModes.BOOK) ) ? CameraModes.BACK : CameraModes.BOOK)
-          console.log(cameraMode)
           }}
         onPointerOver={() => setHovered(true)} 
         onPointerOut={() => setHovered(false)}
