@@ -8,6 +8,7 @@ import { useGLTF, useAnimations, useFBX, useCursor } from '@react-three/drei';
 import { FlakesTexture } from 'three-stdlib';
 
 import { useFirstScene } from "../../contexts/FirstSceneContext";
+import { useNavigation } from "../../contexts/NavigationContext";
 
 export function Gpt(props) {
   const group = useRef()
@@ -63,6 +64,8 @@ export function Gpt(props) {
 
   // actions[names[1]].setLoop(THREE.LoopOnce)
 
+  const { hero } = useNavigation()
+
   useEffect(() => {
     setAnimations(names)
     actions[names[1]].setLoop(THREE.LoopOnce)
@@ -80,7 +83,7 @@ export function Gpt(props) {
       setAnimationIndex(0)
     })
     return () => {
-      actions[names[animationIndex]].fadeOut(0.5);
+      {hero && actions[names[animationIndex]].fadeOut(0.5)};
     }
 
     // actions["sitting"].setLoop(THREE.LoopOnce)
@@ -95,7 +98,7 @@ export function Gpt(props) {
     //   actions.typing.play()
     // })
     // actions.typing.play()
-  }, [animationIndex])
+  }, [animationIndex, hero])
 
   return (
     <group ref={group} {...props} dispose={null}>

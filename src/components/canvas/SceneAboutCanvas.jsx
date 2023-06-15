@@ -66,7 +66,6 @@ const SceneAboutCanvas = () =>  {
       fetchTech()
     }, 2000)
   }, [setTech])
-  console.log('fetch error:', fetchError)
   return (
     <>
       {fetchError && 

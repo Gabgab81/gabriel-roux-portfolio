@@ -15,7 +15,6 @@ const App = () => {
   const [isPresent, safeToRemove] = usePresence()
 
   useEffect(() => {
-    console.log('here')
     !isPresent && setTimeout(safeToRemove, 1000)
   }, [isPresent])
 

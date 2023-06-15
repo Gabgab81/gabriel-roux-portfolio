@@ -127,7 +127,6 @@ const CameraControls = () => {
     } 
     state.camera.position.lerp(cameraPositions[cameraMode].position, delta * 3)
    orbitControls.current.target.lerp(cameraPositions[cameraMode].target, delta * 3)
-   console.log(window.innerWidth)
   });
 
   return(
