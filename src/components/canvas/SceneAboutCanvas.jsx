@@ -6,6 +6,7 @@ import SphericalTech from "./SphericalTech"
 import { Suspense, useEffect, useState } from "react"
 import CanvasLoader from '../Loader'
 import { Bloom, EffectComposer, Noise, Vignette } from "@react-three/postprocessing"
+import CameraZoom from "./CameraZoom"
 
 
 
@@ -65,35 +66,45 @@ const SceneAboutCanvas = () =>  {
       fetchTech()
     }, 2000)
   }, [setTech])
-
+  console.log('fetch error:', fetchError)
   return (
-    <Canvas
-    camera={{
-      fov: 8
-    }}
-      shadows
-      gl={{ preserveDrawingBuffer: true }}
-      // dpr={[1, 1]}
-      dpr={window.devicePixelRatio}
-      >
-      {/* <OrbitControls /> */}
-      <Suspense fallback={<CanvasLoader />}>
-      <color attach="background" args={["black"]} />
+    <>
+      {fetchError && 
+      <div className="w-full h-full flex justify-center items-center">
+        <p className=" text-[red]">{`Error: ${fetchError}`}</p>
+      </div>
+      }
       {!fetchError && !isLoading && (
-        <>
-          <GptHand position={[0.2, -1.63, 1.2]} rotation={[0, 0.7, 0]} />
-          <SphericalTech tech={tech} />   
-        {/* <Environment preset="night" /> */}
-        </>
-      )}
-      <EffectComposer>
-        <Bloom luminanceThreshold={0} luminanceSmoothing={4} height={300} />
-        <Noise opacity={0.3} />
-        <Vignette eskil={false} offset={0.2} darkness={1.2} />
-      </EffectComposer>
-      </Suspense>
-      
-    </Canvas>
+      <Canvas
+        camera={{
+          fov: 8
+        }}
+        shadows
+        gl={{ preserveDrawingBuffer: true }}
+        // dpr={[1, 1]}
+        dpr={window.devicePixelRatio}
+      >
+        {/* <OrbitControls /> */}
+        <Suspense fallback={<CanvasLoader />}>
+          <color attach="background" args={["black"]} />
+          <CameraZoom z500={1} z750={0.5} z1000={0.6} z1500={0.7} />
+          {/* {!fetchError && !isLoading && ( */}
+            <group position={[-0.01, 0, 0.2]}>
+              <GptHand position={[0.2, -1.63, 1.2]} rotation={[0, 0.7, 0]} />
+              <SphericalTech tech={tech} />   
+            {/* <Environment preset="night" /> */}
+            </group>
+          {/* )} */}
+          <EffectComposer>
+            <Bloom luminanceThreshold={0} luminanceSmoothing={4} height={300} />
+            <Noise opacity={0.3} />
+            <Vignette eskil={false} offset={0.2} darkness={1.2} />
+          </EffectComposer>
+        </Suspense>
+        
+      </Canvas>)}
+    </>
+    
     
   )
 }

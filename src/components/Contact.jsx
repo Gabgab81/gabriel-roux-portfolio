@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { folder, useControls } from 'leva'
 import fontUrl from "./../../public/fonts/ElevateSans.otf"
 import { useContactFrom } from "../contexts/ContactForm"
-import { Text3d, Form, SpotLight, CameraZoomContact } from "./canvas"
+import { Text3d, Form, SpotLight, CameraZoom } from "./canvas"
 import { BoxGeometry, Mesh, PointLightHelper, SpotLightHelper } from 'three'
 import * as random from 'maath/random/dist/maath-random.esm'
 import { Moon } from './canvas/Moon'
@@ -56,7 +56,7 @@ const Contact = () => {
       {/* {!fetchError && !isLoading &&  */}
       <>
         <Canvas camera={{ position: [0, 0, -3], fov:20} } shadows gl={{ antialias: false }} dpr={[1, 1.5]}>
-          <CameraZoomContact />
+          <CameraZoom z500={0.35} z750={0.4} z1000={0.5} z1500={0.7} />
           <Moon scale={1.2} position={[-1.1, 0.33, 2.35]} rotation={[0.3, 0.4, 0.5]} />
           <SpotLight distance={3.8} intensity={3} angle={0.3} position={[0.97, 0.69, 1.12]} rotation={[-1.6, -0.3, -1]} />
           <Billboard scale={0.1} rotation={[-0.1, -2.7, -0.1]} position={[0.7, -1.4, 0.66]} />
