@@ -10,7 +10,7 @@ const Cloud = ({ tech}) => {
   // console.log(tech[1])
   const count = tech.length;
   // const count = 10;
-  const radius = count / 250;
+  const radius = count / 270;
   const balls = useMemo(() => {
     const temp = [];
     const spherical = new THREE.Spherical();
@@ -120,7 +120,7 @@ const SphericalTech = ({tech}) => {
     <>
       {/* <Ball /> */}
       <directionalLight position={[-0.71, -0.08, 2.39]} castShadow intensity={0.5} shadow-mapSize={2048} shadow-bias={-0.001} />
-      <group position={[0, 0, 2]} ref={ref}>
+      <group position={[0, 0.01, 2]} ref={ref}>
         <Cloud tech={tech}/> 
         {/* <ContactShadows opacity={1} scale={10} blur={1} far={10} resolution={256} color="#000000" /> */}
         {/* <OrbitControls /> */}

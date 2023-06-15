@@ -3,7 +3,7 @@ import Text3d from './Text3d';
 import Form from "./Form";
 import Text3dWood from "./Text3dWood";
 import SpotLight from "./SpotLight";
-import CameraZoomContact from "./CameraZoomContact";
+import CameraZoom from "./CameraZoom";
 
 export {
   SceneCanvas,
@@ -11,5 +11,5 @@ export {
   Form,
   Text3dWood,
   SpotLight,
-  CameraZoomContact,
+  CameraZoom,
 };

@@ -16,25 +16,31 @@ const ServiceCard = ({ index, title, icon }) => {
 
   return(
     <Tilt 
-      className="xs:w-[200px] w-full">
-      <div className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card ">
+      className="xs:w-[200px] xl:w-3/12 lg:w-5/12 md:w-4/12 sm:w-5/12 h-8/12"
+    >
+      <div className="w-full h-full green-pink-gradient p-[1px] rounded-[20px] shadow-card 
+     ">
         <div
           // options={{
           //   max: 45,
           //   scale: 1,
           //   speed: 450
           // }}
-          className="bg-tertiary rounded-[20px] py-5 px-12
+          className="bg-black h-full rounded-[20px] sm:py-5 sm:px-12 py-3 px-4
           flex justify-evenly items-center flex-col"
+          // className={`bg-tertiary rounded-[20px] sm:py-5 sm:px-12 py-${index+1} px-${index}
+          // flex justify-evenly items-center flex-col`}
         >
-        <img 
-          src={`https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/development/${keyImg}.png`}
-          alt={title}
-          className="w-16 h-16 object-contain hidden lg:inline"
-        />
-        <h3 className="text-white sm:text-[20px] font-bold text-center">{title}</h3>
+          <img 
+            src={`https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/development/${keyImg}.png`}
+            alt={title}
+            className="w-16 h-16 object-contain hidden lg:inline"
+          />
+          <h3 className="text-white sd:text-[20px] sm:text-[16px] text-[14px] font-bold text-center">{title}</h3>
         </div>
       </div>
+      {/* <h3 className="text-white sm:text-[20px] text-[14px] font-bold 
+      text-center sm:hidden block">{title}</h3> */}
     </Tilt>
   )
 }
@@ -76,41 +82,44 @@ const About = () => {
   }, [])
   // console.log(services)
   return (
-    <section className='relative w-full h-screen lg:mx-auto flex flex-col justify-between lg:justify-between lg:flex-row'>
-      {isLoading && <p>Loading services...</p>}
-
-      <div className="lg:w-6/12 lg:h-full h-2/6">
+    <section className='relative w-full h-screen sm:mx-auto flex flex-col justify-center md:justify-center sm:flex-row'>
+      
+      <div className="xl:w-5/12 md:w-5/12 h-3/6 sm:h-full w-full bg-[black] px-4 md:px-0 overflow-auto">
         
-        <div>
-          <p className={styles.sectionSubText} >Introduction</p>
-          <h2 className={styles.sectionHeadText} >Overview.</h2>
-        </div>
-        {!fetchError && !isLoading && 
-        <>
-          <p className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] " >
-          I'm a skilled software developper with experince in TypeScript and 
-          Javascript, and expertise in framworks like REact,  Node.js, and Three.js.
-          I'm a quick lerner and collaborate closely with clients to create efficient,
-          scalable, and user-friendly solutions that solve real-world problems.
-          Let's work together to bring yojur ideas to life!
-        </p>
-        {/* <p> {services[0].title}</p> */}
         
-        </>}
-        {fetchError && <p style={{color:"red"}}>{`Error: ${fetchError}`}</p>}
-        
-        <div className="lg:h-fit h-2/6">
-          <div className="mt-1 flex flex-wrap gap-5">
-            {services.map((service, index) => (
-              <ServiceCard key={service.id} index={index} {...service} />
-            ))}
+          <div className="pt-20">
+            <h2 className={styles.sectionHeadText} >About</h2>
           </div>
-        </div>
+          
+          <p className="text-secondary sm:text-[17px] text-[14px] max-w-3xl 
+          sm:leading-[30px] leading-[20px] " >
+            I'm a skilled software developper with experince in TypeScript and 
+            Javascript, and expertise in framworks like REact,  Node.js, and Three.js.
+            I'm a quick lerner and collaborate closely with clients to create efficient,
+            scalable, and user-friendly solutions that solve real-world problems.
+            Let's work together to bring yojur ideas to life!
+          </p>
         
+        
+      
+        {fetchError && <p style={{color:"red"}}>{`Error: ${fetchError}`}</p>}
+
+        {!fetchError && !isLoading && 
+          <>
+            <div className="mt-8 sm:h-fit h-fit">
+              <div className="mt-1 flex flex-wrap justify-center gap-5">
+                {isLoading && <p>Loading services...</p>}
+                {services.map((service, index) => (
+                  <ServiceCard key={service.id} index={index} {...service} />
+                ))}
+              </div>
+            </div>
+          </>
+        } 
       </div>
       
       
-      <div className="lg:w-6/12 lg:h-full h-2/6" >
+      <div className="xl:w-5/12 md:w-5/12 sm:h-full h-3/6 sm:w-6/12" >
         <SceneAboutCanvas />
       </div>
       

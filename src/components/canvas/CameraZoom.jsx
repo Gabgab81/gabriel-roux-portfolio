@@ -2,7 +2,7 @@ import { OrbitControls } from "@react-three/drei"
 import { useThree } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 
-const CameraZoomContact = () => {
+const CameraZoom = ({ z500, z750, z1000, z1500 }) => {
 
   const orbitControls = useRef()
 
@@ -15,25 +15,25 @@ const CameraZoomContact = () => {
 
   useEffect(() => {
 
-    const mediaQuery500 = window.matchMedia('(max-width: 500px)');
+    const mediaQuery500 = window.matchMedia('(max-width: 640px)');
     setIs500(mediaQuery500.matches);
-    const mediaQuery750 = window.matchMedia('(max-width: 750px)');
+    const mediaQuery750 = window.matchMedia('(max-width: 768px)');
     setIs750(mediaQuery750.matches);
-    const mediaQuery1000 = window.matchMedia('(max-width: 1000px)');
+    const mediaQuery1000 = window.matchMedia('(max-width: 1024px)');
     setIs1000(mediaQuery1000.matches);
-    const mediaQuery1500 = window.matchMedia('(max-width: 1500px)');
+    const mediaQuery1500 = window.matchMedia('(max-width: 1536px)');
     setIs1500(mediaQuery1500.matches);
 
     const handleZoom = () => {
       // console.log(even)
       if (is500) {
-        camera.zoom = 0.35
+        camera.zoom = z500
       } else if (is750) {
-        camera.zoom = 0.4
+        camera.zoom = z750
       } else if (is1000) {
-        camera.zoom = 0.5
+        camera.zoom = z1000
       } else if (is1500) {
-        camera.zoom = 0.7
+        camera.zoom = z1500
       } else {
         camera.zoom = 1
       }
@@ -82,4 +82,4 @@ const CameraZoomContact = () => {
   )
 }
 
-export default CameraZoomContact;
+export default CameraZoom;
