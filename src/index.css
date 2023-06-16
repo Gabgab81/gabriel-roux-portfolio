@@ -21,11 +21,21 @@
 
 body{
   overflow: hidden;
+  font-size: 20px;
 }
 
 /* form{
   overflow: visible !important;
 } */
+
+.over::-webkit-scrollbar {
+  display: none;
+}
+
+.over{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
+}
 
 .hash-span {
   margin-top: -100px;
