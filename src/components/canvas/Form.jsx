@@ -4,6 +4,7 @@ import { Html, RoundedBox, Text, useTexture } from "@react-three/drei";
 // import fontUrl from "./../../../public/fonts/ElevateSans.otf";
 import { Text3dWood } from "./"
 import * as THREE from "three"
+import { folder, useControls } from "leva";
 
 const Inputs = (props) => {
   const formRef = useRef()
@@ -63,15 +64,16 @@ const Inputs = (props) => {
       <form
         onSubmit={HandleSubmit}
         ref={formRef}
-        className='flex flex-col gap-14'
+        className='flex flex-col gap-8 text-3xl '
       >
           <input
             type="text"
             name='name' 
             value={name}
             onChange={handleNameChange}
+            onClick={ () => setFetchError(null)}
             placeholder="What's your name?"
-            className='bg-tertiary/0 py-4 px-6 placeholder:text-white text-white
+            className='text-center bg-tertiary/0 py-4 px-6 placeholder:text-white text-white
             rounded-lg outlined-none border-none font-medium'
           /> 
           {/* {fetchError.empty? (<p></p>)} */}
@@ -80,30 +82,32 @@ const Inputs = (props) => {
             name='email' 
             value={email}
             onChange={handleEmailChange}
+            onClick={ () => setFetchError(null)}
             placeholder="What's your email?"
-            className='bg-tertiary/0 py-4 px-6 placeholder:text-white text-white
+            className='text-center bg-tertiary/0 mt-4 py-4 px-6 placeholder:text-white text-white
             rounded-lg outlined-none border-none font-medium'
           /> 
           <textarea
-            rows="7"
+            rows="5"
             name='message' 
             value={message}
             onChange={handleMessageChange}
+            onClick={ () => setFetchError(null)}
             placeholder="What do you want to say?"
-            className='bg-tertiary/0 py-4 px-6 placeholder:text-white text-white
+            className='text-center bg-tertiary/0 mt-4 py-4 px-6 placeholder:text-white text-white
             rounded-lg outlined-none border-none font-medium'
           /> 
           <button
             type='submit'
-            className='bg-[#ff2e2e]/0 py-3 px-8 outline-none w-fit text-white font-bold
+            className='ml-14 bg-[#ff2e2e]/0 py-3 px-8 outline-none w-fit text-white font-bold
             shadow-md  rounded-xl'
           >
             {loading ? 'Sending...' : 'Send'}
           </button>
-          <div className="absolute bottom-[57px]">
+          <div className="absolute bottom-[85px] left-[50px]">
             {fetchError && (fetchError.map((error, index) => (
             <p 
-              className='text-red-500'
+              className='text-red-600 text-1xl text-center'
               key={index}
             >{error}</p>
             ))
@@ -116,6 +120,24 @@ const Inputs = (props) => {
 }
 
 const Form = (props) => {
+
+  // const { p_red, p_green, p_blue, r_red, r_green, r_blue, distance, angle } = useControls({
+  //     position: folder({
+  //       p_red: { value: 0.85, min: -5, max: 5, step: 0.01 },
+  //       p_green: { value: -1.4, min: -5, max: 5, step: 0.01 },
+  //       p_blue: { value: 0.66, min: -5, max: 5, step: 0.01 },
+  //     }),
+  
+  //     rotation: folder({
+  //       r_red: { value: 0, min: -5, max: 5, step: 0.1 },
+  //       r_green: { value: 0, min: -5, max: 5, step: 0.1 },
+  //       r_blue: { value: 0, min: -5, max: 5, step: 0.1 },
+  //     }),
+  //     distance: { value: 10, min: -5, max: 15, step: 0.1 },
+  //     angle: { value: 0.4, min: 0, max: 5, step: 0.01 },
+  //     scale: { value: 0.3, min: -5, max: 5, step: 0.1 },
+      
+  //   })
 
   const woodTextureprops = useTexture({
     // map: './textures/woods/Wood_Planks_008_COLOR.jpg',
@@ -157,16 +179,17 @@ const Form = (props) => {
         <meshStandardMaterial color={"#ff2e2e"} {...woodTextureprops} />
       </mesh> */}
       <RoundedBox
-        args={[1, 1, 1]} 
+        args={[2.4, 1.5, 0.6]} 
         radius={0.1}
         smoothness={2} 
-        scale={[2.5, 1, 0.5]}
-        position={[-1.7, -6, -0.2]}
+        // scale={[3, 1.3, 0.5]}
+        position={[-1.7, -5.95, -0.2]}
         castShadow
         // receiveShadow
       >
          <meshStandardMaterial color={"#ff2e2e"} {...woodTextureprops} />
       </RoundedBox>
+      {/* <Inputs position={[p_red, p_green, p_blue]} rotation={[r_red, r_green, r_blue]} /> */}
       <Inputs position={[0, 0, 0]} />
     </group> 
   )
