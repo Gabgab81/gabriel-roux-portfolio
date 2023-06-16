@@ -53,8 +53,8 @@ const Navbar = () => {
   return (
     <nav
       className={`${styles.paddingX} w-full flex items-center py-5 fixed 
-      top-0 z-20 bg-primary`}>
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      top-0 z-20 bg-black`}>
+      <div className="w-full flex justify-between items-center mx-auto">
 
         {/* <Link 
           to="/"
@@ -91,7 +91,7 @@ const Navbar = () => {
             href={`/`}>
             <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
             <p 
-              className="text-white text-[18px] font-bold cursor-pointer flex"
+              className="text-white text-[20px] font-bold cursor-pointer flex"
             >
               Gabriel Roux&nbsp;
               <span className="sm:block hidden">
@@ -106,7 +106,7 @@ const Navbar = () => {
             <li 
               key={link.id}
               className={`${active == link.title
-              ? "text-white" : "text-secondary"} hover:text-white text-[18px]
+              ? "text-white" : "text-secondary"} hover:text-white text-[20px]
               font-medium cursor-pointer`}
               onClick={() => {
                 setActive(link.title)
@@ -134,11 +134,12 @@ const Navbar = () => {
             <li 
               key={link.id}
               className={`${active == link.title
-              ? "text-white" : "text-secondary"} text-[16px]
+              ? "text-white" : "text-secondary"} text-[18px]
               font-poppins font-medium cursor-pointer`}
               onClick={() => {
                 setToggle(!toggle);
                 setActive(link.title);
+                navigation(link.id)
                 }}
               >
               <a href={`#${link.id}`}>{link.title}</a>

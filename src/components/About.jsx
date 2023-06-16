@@ -18,8 +18,7 @@ const ServiceCard = ({ index, title, icon }) => {
     <Tilt 
       className="xs:w-[200px] xl:w-3/12 lg:w-5/12 md:w-4/12 sm:w-5/12 h-8/12"
     >
-      <div className="w-full h-full green-pink-gradient p-[1px] rounded-[20px] shadow-card 
-     ">
+      <div className="w-full h-full green-pink-gradient p-[1px] rounded-[20px] shadow-card ">
         <div
           // options={{
           //   max: 45,
@@ -36,7 +35,7 @@ const ServiceCard = ({ index, title, icon }) => {
             alt={title}
             className="w-16 h-16 object-contain hidden lg:inline"
           />
-          <h3 className="text-white sd:text-[20px] sm:text-[16px] text-[14px] font-bold text-center">{title}</h3>
+          <h3 className="text-white sd:text-[20px] sm:text-[18px] text-[16px] font-bold text-center">{title}</h3>
         </div>
       </div>
       {/* <h3 className="text-white sm:text-[20px] text-[14px] font-bold 
@@ -84,14 +83,16 @@ const About = () => {
   return (
     <section className='relative w-full h-screen sm:mx-auto flex flex-col justify-center md:justify-center sm:flex-row'>
       
-      <div className="xl:w-5/12 md:w-5/12 h-3/6 sm:h-full w-full bg-[black] px-4 md:px-0 overflow-auto">
+      <div 
+        className="over xl:w-5/12 md:w-5/12 h-3/6 h-full w-full bg-[black] px-4 md:px-0 overflow-auto"
+      >
         
         
           <div className="pt-20">
             <h2 className={styles.sectionHeadText} >About</h2>
           </div>
           
-          <p className="text-secondary sm:text-[17px] text-[14px] max-w-3xl 
+          <p className="text-secondary sm:text-[20px] text-[16px] max-w-3xl 
           sm:leading-[30px] leading-[20px] " >
             I'm a skilled software developper with experince in TypeScript and 
             Javascript, and expertise in framworks like REact,  Node.js, and Three.js.

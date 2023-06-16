@@ -15,6 +15,7 @@ import { easing } from 'maath'
 
 import Img from "./canvas/Img";
 import Frame from "./canvas/Frame";
+import { Bloom, EffectComposer, Noise, Vignette } from "@react-three/postprocessing";
 
 // import fontUrl from "/Coolvetica.otf"
 // import fontUrl from "./../../public/fonts/Coolvetica.otf"
@@ -244,7 +245,7 @@ const Works = () => {
         <Canvas gl={{ antialias: false }} dpr={[1, 1.5]} >
         <color attach="background" args={['#000']} />
           <Text fontSize={1.3} font="/fonts/BlackChancery.TTF" >
-            Projects
+            Works
             <meshStandardMaterial 
               color="white" 
               toneMapped={false} 
@@ -253,7 +254,7 @@ const Works = () => {
             />
           </Text>
           <Text fontSize={1.35} font="/fonts/BlackChancery.TTF" position={[0, 0.03, -0.1]} >
-            Projects
+            Works
             <meshStandardMaterial 
               color="black" 
               toneMapped={false} 
@@ -267,7 +268,11 @@ const Works = () => {
               <Pages position={[0, 0, -3.5]} rotation={[0, 0, 0]} />
             </Scroll>
           </ScrollControls>
-        
+          <EffectComposer>
+            {/* <Bloom luminanceThreshold={0} luminanceSmoothing={4} height={300} /> */}
+            <Noise opacity={0.3} />
+            <Vignette eskil={false} offset={0.2} darkness={1.1} />
+          </EffectComposer>
           <ambientLight intensity={1} />
         </Canvas>
         <OverlayWorks isScroll={scroll} setIsScroll={setIsScroll} projects={projects} index={index} />

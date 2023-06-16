@@ -133,7 +133,8 @@ const SceneCanvas = () => {
 
           <Text
             color={"#915eff"}
-            font={fontUrl}
+            // font={fontUrl}
+            font="/fonts/BlackChancery.TTF" 
             // position={[p_red, p_green, p_blue]}
             position={[-2, 1.65, 0.4]}
             // rotation={[r_red, r_green,  r_blue]}
@@ -146,7 +147,8 @@ const SceneCanvas = () => {
 
           <Text
             color={"white"}
-            font={fontUrl}
+            // font={fontUrl}
+            font="/fonts/BlackChancery.TTF" 
             // position={[p_red, p_green, p_blue]}
             position={[-2, 1.4, 0.2]}
             // rotation={[r_red, r_green,  r_blue]}
@@ -158,7 +160,8 @@ const SceneCanvas = () => {
           </Text>
           <Text
             color={"white"}
-            font={fontUrl}
+            // font={fontUrl}
+            font="/fonts/BlackChancery.TTF" 
             // position={[p_red, p_green, p_blue]}
             position={[-2, 1.2, -0.1]}
             // rotation={[r_red, r_green,  r_blue]}
