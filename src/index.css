@@ -4,15 +4,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face{
+  font-family: myFont;
+  src: url(./../public/fonts/BlackChancery.otf);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: myFont, sans-serif;
   /* scroll-behavior: smooth; */
   color-scheme: dark;
   overscroll-behavior: none;
 }
+
+body{
+  overflow: hidden;
+}
+
+/* form{
+  overflow: visible !important;
+} */
 
 .hash-span {
   margin-top: -100px;
