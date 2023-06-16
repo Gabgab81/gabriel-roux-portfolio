@@ -4,9 +4,10 @@ import { SectionWrapper } from "../hoc";
 import { AnimatePresence, motion } from "framer-motion";
 
 import OverlayWorks from "./OverlayWorks";
+import CanvasLoader from './Loader'
 
 import * as THREE from 'three';
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useThree} from "@react-three/fiber";
 import { Scroll, ScrollControls, useScroll, Image, Html, MeshWobbleMaterial, OrbitControls, Trail, useTexture, MeshReflectorMaterial, Text} from "@react-three/drei";
 import { folder, useControls } from "leva";
@@ -244,6 +245,8 @@ const Works = () => {
       <>
         <Canvas gl={{ antialias: false }} dpr={[1, 1.5]} >
         <color attach="background" args={['#000']} />
+        <Suspense fallback={<CanvasLoader />}>
+
           <Text fontSize={1.3} font="/fonts/BlackChancery.TTF" >
             Works
             <meshStandardMaterial 
@@ -274,6 +277,9 @@ const Works = () => {
             <Vignette eskil={false} offset={0.2} darkness={1.1} />
           </EffectComposer>
           <ambientLight intensity={1} />
+
+        </Suspense>
+          
         </Canvas>
         <OverlayWorks isScroll={scroll} setIsScroll={setIsScroll} projects={projects} index={index} />
       </>
