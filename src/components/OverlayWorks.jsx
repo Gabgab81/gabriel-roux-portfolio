@@ -29,7 +29,7 @@ const OverlayWorks = ({isScroll, setIsScroll, projects, index}) => {
             initial={{ x: 300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -300, opacity: 0 }}
-            className={`absolute z-40 top-[0px] bottom-[0px] left-[0px] right-[0px] m-auto w-11/12 h-5/6
+            className={`absolute z-40 top-[0px] bottom-[100px] left-[0px] right-[0px] m-auto w-11/12 h-5/6
             green-pink-gradient p-[10px] rounded-[20px]`}
             onPointerOut={out}
           >
@@ -64,7 +64,7 @@ const OverlayWorks = ({isScroll, setIsScroll, projects, index}) => {
                 {/* -------------- Description -------------- */}
 
                 <p 
-                  className="rounded-r-[20px] green-pink-gradient p-2 text-[16px] "
+                  className="rounded-r-[20px] green-pink-gradient p-2 text-[18px] "
                   onClick={function() {
                     setDescrip(!descrip)
                   }}
@@ -175,7 +175,7 @@ const OverlayWorks = ({isScroll, setIsScroll, projects, index}) => {
             initial={{ x: -300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: 300, opacity: 0 }}
-            className={'absolute z-40 green-pink-gradient rounded-[20px] bottom-[14px] left-[0px] right-[0px] m-auto w-11/12 m h-10 flex justify-around items-center wrap shadow-card'}
+            className={'absolute z-40 green-pink-gradient rounded-[20px] bottom-[60px] left-[0px] right-[0px] m-auto w-11/12 m h-10 flex justify-around items-center wrap shadow-card'}
           >
             <AnimatePresence>
               {projects[index].techProjects.map((tech) =>(
@@ -186,13 +186,16 @@ const OverlayWorks = ({isScroll, setIsScroll, projects, index}) => {
                     scale: [1, 1.4, 1],
                     rotate: [0, 180, 360],
                   }}
-                  key={tech.id} 
+                  key={tech.id}
+                  className="content_img" 
+                  // onPointerOver={}
                 >
                   <img 
                   key={tech.id} 
                   src={`https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/development/${tech.icon}.png`}
                   alt={tech.name}
                   className="rounded-[20px] w-9 h-8"/>
+                  <div>{tech.name}</div>
                 </motion.div>
                 
               ))}
