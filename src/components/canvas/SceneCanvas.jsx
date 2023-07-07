@@ -136,7 +136,7 @@ const SceneCanvas = () => {
             // font={fontUrl}
             font="/fonts/BlackChancery.TTF" 
             // position={[p_red, p_green, p_blue]}
-            position={[-2, 1.65, 0.4]}
+            position={[-2, 1.7, 0.4]}
             // rotation={[r_red, r_green,  r_blue]}
             rotation={[-0.5, 1.6, 0.5]}
             // scale={scale} 
@@ -150,26 +150,40 @@ const SceneCanvas = () => {
             // font={fontUrl}
             font="/fonts/BlackChancery.TTF" 
             // position={[p_red, p_green, p_blue]}
-            position={[-2, 1.4, 0.2]}
+            position={[-2, 1.46, 0.32]}
             // rotation={[r_red, r_green,  r_blue]}
             rotation={[-0.5, 1.6, 0.5]}
             // scale={scale} 
             scale={0.2}
           >
-            I develop 3D visuals, user
+            I'm "hard worker" junior
           </Text>
           <Text
             color={"white"}
             // font={fontUrl}
             font="/fonts/BlackChancery.TTF" 
             // position={[p_red, p_green, p_blue]}
-            position={[-2, 1.2, -0.1]}
+            position={[-2, 1.25, 0.45]}
             // rotation={[r_red, r_green,  r_blue]}
             rotation={[-0.5, 1.6, 0.5]}
             // scale={scale}
             scale={0.2} 
           >
-            interfaces and web applications.
+            full stack developper.
+          </Text>
+
+          <Text
+            color={"white"}
+            // font={fontUrl}
+            font="/fonts/BlackChancery.TTF" 
+            // position={[p_red, p_green, p_blue]}
+            position={[-2, 1, 0.45]}
+            // rotation={[r_red, r_green,  r_blue]}
+            rotation={[-0.5, 1.6, 0.5]}
+            // scale={scale}
+            scale={0.2} 
+          >
+            Let's work together!!
           </Text>
 
           <BoxCollider 
