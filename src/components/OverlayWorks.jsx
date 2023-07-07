@@ -64,7 +64,7 @@ const OverlayWorks = ({isScroll, setIsScroll, projects, index}) => {
                 {/* -------------- Description -------------- */}
 
                 <p 
-                  className="rounded-r-[20px] green-pink-gradient p-2 text-[16px]"
+                  className="rounded-r-[20px] green-pink-gradient p-2 text-[16px] "
                   onClick={function() {
                     setDescrip(!descrip)
                   }}
@@ -78,8 +78,8 @@ const OverlayWorks = ({isScroll, setIsScroll, projects, index}) => {
                       initial={{ x: 300, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       exit={{ x: -300, opacity: 0 }}
-                      className={`absolute z-40 top-[0px] bottom-[0px] left-[0px] right-[0px] m-auto w-fit h-fit
-                      green-pink-gradient p-[10px] rounded-[20px] shadow-card`}
+                      className={`absolute z-40 top-[0px] bottom-[0px] left-[0px] right-[0px] m-auto w-fit h-fit lg:max-w-[75%] lg:max-h-[80%]
+                      md:max-w-[90%] md:max-h-[90%] max-w-[100%] max-h-[100%] green-pink-gradient lg:p-[30px] md:p-[20px] p-[10px]  rounded-[20px] shadow-card overflow-auto over`}
                       onClick={function() {
                       setDescrip(!descrip)
                       }}
