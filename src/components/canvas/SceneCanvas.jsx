@@ -142,7 +142,7 @@ const SceneCanvas = () => {
             // scale={scale} 
             scale={0.3}
           >
-            Hi' I'm Gabriel
+            Hi, I'm Gabriel
           </Text>
 
           <Text
