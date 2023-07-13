@@ -84,7 +84,7 @@ const About = () => {
     <section className='relative w-full h-screen sm:mx-auto flex flex-col justify-center md:justify-center sm:flex-row'>
       
       <div 
-        className="over xl:w-5/12 md:w-5/12 h-3/6 h-full w-full bg-[black] px-4 md:px-0 overflow-auto"
+        className="over xl:w-5/12 md:w-5/12 h-full w-full bg-[black] px-4 md:px-0 overflow-auto"
       >
         
         
@@ -94,11 +94,18 @@ const About = () => {
           
           <p className="text-secondary sm:text-[20px] text-[16px] max-w-3xl 
           sm:leading-[30px] leading-[20px] " >
-            I'm a skilled software developper with experince in TypeScript and 
+            Hey!! I'm Gabriel Roux. I was a student from the bootcamp "le wagon"
+            in Bordeaux (France). With this formation, I learned how to create 
+            a full fonctional website with Rails and Ruby for the back, and Html, 
+            CSS and Javascript for the front. Later on, I decided to add new skills 
+            more suitable to the demand and new skills I needed to build my projets. 
+            So I become familiar with React or threeJs for exemple and I'm willing 
+            to learn more. Let's work together to bring your ideas to life! 
+            {/* I'm a skilled software developper with experince in TypeScript and 
             Javascript, and expertise in framworks like REact,  Node.js, and Three.js.
             I'm a quick lerner and collaborate closely with clients to create efficient,
             scalable, and user-friendly solutions that solve real-world problems.
-            Let's work together to bring yojur ideas to life!
+            Let's work together to bring yojur ideas to life! */}
           </p>
         
         
