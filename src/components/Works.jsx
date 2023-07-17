@@ -43,7 +43,7 @@ const Works = () => {
   // })
 
   //API
-  const API_URL = "http://localhost:3000/api/v1/projects";
+  const API_URL = "https://api-portfolio-gabriel-roux-17ad74d10c12.herokuapp.com/api/v1/projects";
 
   const [ projects, setProjects ] = useState([]);
   const [ fetchError, setFetchError] = useState(null);
@@ -52,8 +52,8 @@ const Works = () => {
   useEffect(() => {
     const headers =  {
       'Content-Type': 'application/json',
-      'X-User-Email': 'aaaa@gmail.com',
-      'X-User-Token': 'g85DkGo-ghdTzy71sHMq',
+      'X-User-Email': 'rouxgab81@gmail.com',
+      'X-User-Token': 'yygfpqZzYtGDsU_1uxTc',
     };
 
     const fetchServices = async () => {
@@ -67,6 +67,7 @@ const Works = () => {
         setFetchError(err.message)
       } finally {
         setIsLoading(false)
+        console.log('fetchError', fetchError)
       }
     }
     setTimeout(() => {
@@ -126,6 +127,9 @@ const Works = () => {
     const rnd = Math.floor(Math.random()* 1000000)
     return (
       <group {...props}>
+      {fetchError && <p 
+        className="h-full w-full flex justify-center items-center"
+        style={{color:"red"}}>{`Error: ${fetchError}`}</p>}
       {projects.map((project, i) => (
         <group
         
@@ -175,7 +179,7 @@ const Works = () => {
           // key={rnd + i * 2} 
           position={[-width * w * i, -0.1, (i / 5) * 5]} 
           scale={[width * w - m * 2, 5, 1]} 
-          url={`https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/development/${projects[i + index1 < projects.length ? i + index1 : ( i + index1 ) - projects.length].image}.png`} 
+          url={`https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/production/${projects[i + index1 < projects.length ? i + index1 : ( i + index1 ) - projects.length].image}.png`} 
           onClick={function(event) {
               setScroll(!scroll)
               setHovered(false)
@@ -240,7 +244,13 @@ const Works = () => {
 
   return (
     <section className='relative w-full h-screen lg:mx-auto flex flex-col justify-between lg:justify-between lg:flex-row'>
-      {isLoading && <p>Loading services...</p>}
+      {/* {isLoading && <p>Loading services...</p>} */}
+      {fetchError && 
+        <p 
+          className="h-full w-full flex justify-center items-center"
+          style={{color:"red"}}>{`Error: ${fetchError}`}
+        </p>}
+
       {!fetchError && !isLoading && 
       <>
         <Canvas gl={{ antialias: false }} dpr={[1, 1.5]} >

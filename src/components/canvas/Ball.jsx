@@ -16,7 +16,7 @@ const Ball = (props) => {
     keyImg = 'pvf59cynicfmobpq4xr8dhkxmscn';
   }
 
-  const textures = useTexture(`https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/development/${keyImg}.png`)
+  const textures = useTexture(`https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/production/${keyImg}.png`)
   
   
 

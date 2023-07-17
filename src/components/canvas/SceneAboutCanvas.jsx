@@ -38,12 +38,12 @@ const SceneAboutCanvas = () =>  {
 
   useEffect(() => {
 
-    const API_URL = 'http://localhost:3000/api/v1/technologies';
+    const API_URL = 'https://api-portfolio-gabriel-roux-17ad74d10c12.herokuapp.com/api/v1/technologies';
 
     const headers =  {
       'Content-Type': 'application/json',
-      'X-User-Email': 'aaaa@gmail.com',
-      'X-User-Token': 'g85DkGo-ghdTzy71sHMq',
+      'X-User-Email': 'rouxgab81@gmail.com',
+      'X-User-Token': 'yygfpqZzYtGDsU_1uxTc',
     };
 
     const fetchTech = async () => {
