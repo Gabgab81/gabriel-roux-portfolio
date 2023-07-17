@@ -81,10 +81,10 @@ const About = () => {
   }, [])
   // console.log(services)
   return (
-    <section className='relative w-full h-screen sm:mx-auto flex flex-col justify-center md:justify-center sm:flex-row'>
+    <section className=' w-full h-screen sm:mx-auto flex flex-col justify-center md:justify-center sm:flex-row'>
       
       <div 
-        className="over xl:w-5/12 md:w-5/12 h-full w-full bg-[black] px-4 md:px-0 overflow-auto"
+        className="over xl:w-5/12 md:w-5/12 h-full w-full bg-[black] px-4 md:px-0 overflow-scroll"
       >
         
         
@@ -111,12 +111,11 @@ const About = () => {
         
       
         {fetchError && <p style={{color:"red"}}>{`Error: ${fetchError}`}</p>}
-
+        {isLoading && <p className="flex justify-center items-center">Loading services...</p>}
         {!fetchError && !isLoading && 
           <>
-            <div className="mt-8 sm:h-fit h-fit">
-              <div className="mt-1 flex flex-wrap justify-center gap-5">
-                {isLoading && <p>Loading services...</p>}
+            <div className="mt-8 h-fit ">
+              <div className="mt-1 mb-12 flex flex-wrap justify-center gap-5 h-fit">
                 {services.map((service, index) => (
                   <ServiceCard key={service.id} index={index} {...service} />
                 ))}
