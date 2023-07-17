@@ -37,7 +37,7 @@ const OverlayWorks = ({isScroll, setIsScroll, projects, index}) => {
             <div
               className={`rounded-[20px] h-full py-5 px-30 flex justify-evenly items-center flex-col`}
               style={{
-                backgroundImage: `url('https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/development/${projects[index].image}.png')`,
+                backgroundImage: `url('https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/production/${projects[index].image}.png')`,
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
                 // backgroundSize: "100% 100%"
@@ -121,7 +121,7 @@ const OverlayWorks = ({isScroll, setIsScroll, projects, index}) => {
                       <div
                         className={`rounded-[20px] h-full flex items-end`}
                         style={{
-                          backgroundImage: `url('https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/development/${projects[index].db}.png')`,
+                          backgroundImage: `url('https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/production/${projects[index].db}.png')`,
                           backgroundRepeat: "no-repeat",
                           // backgroundPosition: "center",
                           backgroundSize: "100% 100%",
@@ -140,7 +140,7 @@ const OverlayWorks = ({isScroll, setIsScroll, projects, index}) => {
                         <p
                           className=" rounded-t-[20px] w-fit h-fit green-pink-gradient py-2 px-2 mx-auto"
                           onClick={function(){
-                            imageNewTab(`https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/development/${projects[index].db}.png`)
+                            imageNewTab(`https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/production/${projects[index].db}.png`)
                           }}
                           onPointerOver={over}
                           onPointerOut={out}
@@ -192,7 +192,7 @@ const OverlayWorks = ({isScroll, setIsScroll, projects, index}) => {
                 >
                   <img 
                   key={tech.id} 
-                  src={`https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/development/${tech.icon}.png`}
+                  src={`https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/production/${tech.icon}.png`}
                   alt={tech.name}
                   className="rounded-[20px] w-9 h-8"/>
                   <div>{tech.name}</div>

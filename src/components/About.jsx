@@ -31,7 +31,7 @@ const ServiceCard = ({ index, title, icon }) => {
           // flex justify-evenly items-center flex-col`}
         >
           <img 
-            src={`https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/development/${keyImg}.png`}
+            src={`https://res.cloudinary.com/dgk1xld7w/image/upload/v1683485154/production/${keyImg}.png`}
             alt={title}
             className="w-16 h-16 object-contain hidden lg:inline"
           />
@@ -46,7 +46,7 @@ const ServiceCard = ({ index, title, icon }) => {
 
 const About = () => {
 
-  const API_URL = "http://localhost:3000/api/v1/services";
+  const API_URL = "https://api-portfolio-gabriel-roux-17ad74d10c12.herokuapp.com/api/v1/services";
 
   const [ services, setServices ] = useState([]);
   const [ fetchError, setFetchError] = useState(null);
@@ -55,8 +55,8 @@ const About = () => {
   useEffect(() => {
     const headers =  {
       'Content-Type': 'application/json',
-      'X-User-Email': 'aaaa@gmail.com',
-      'X-User-Token': 'g85DkGo-ghdTzy71sHMq',
+      'X-User-Email': 'rouxgab81@gmail.com',
+      'X-User-Token': 'yygfpqZzYtGDsU_1uxTc',
     };
 
     const fetchServices = async () => {
