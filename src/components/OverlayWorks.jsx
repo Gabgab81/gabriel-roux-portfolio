@@ -156,12 +156,24 @@ const OverlayWorks = ({isScroll, setIsScroll, projects, index}) => {
               </div>
               <div className="flex items-center justify-between w-full">
 
+                {/* -------------- code -------------- */}
+
                 <a href={`${projects[index].code}`} target="_blank" rel="noreferrer">
                   <img src="/icons/github-white.svg" alt="Github" className="rounded-r-[20px] green-pink-gradient p-2 w-fit h-14"/>
                 </a>
-                <a href={`${projects[index].figma}`} target="_blank" rel="noreferrer" className="">
-                  <img src="/icons/Figma.svg" alt="Figma" className="rounded-l-[20px] green-pink-gradient p-2 w-fit h-14"/>
-                </a>
+
+                {/* -------------- code -------------- */}
+
+                {/* -------------- figma -------------- */}
+
+                { (projects[index].figma != '') && (
+                  <a href={`${projects[index].figma}`} target="_blank" rel="noreferrer" className="">
+                    <img src="/icons/Figma.svg" alt="Figma" className="rounded-l-[20px] green-pink-gradient p-2 w-fit h-14"/>
+                  </a>
+                )}
+
+                {/* -------------- figma -------------- */}
+                
               </div>
 
               <a href={`${projects[index].address}`} target="_blank" rel="noreferrer" className="absolute rounded-t-[20px] green-pink-gradient bottom-[8px] py-1 px-5">
