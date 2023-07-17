@@ -35,8 +35,8 @@ const Inputs = (props) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-User-Email': "rouxgab81@gmail.com",
-        'X-User-Token': 'yygfpqZzYtGDsU_1uxTc',
+        'X-User-Email': import.meta.env.VITE_EMAIL,
+        'X-User-Token': import.meta.env.VITE_TOKEN,
       },
       body: JSON.stringify({
         "contact": { "name": name, "email": email, "message": message },
