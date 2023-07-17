@@ -55,8 +55,8 @@ const About = () => {
   useEffect(() => {
     const headers =  {
       'Content-Type': 'application/json',
-      'X-User-Email': 'rouxgab81@gmail.com',
-      'X-User-Token': 'yygfpqZzYtGDsU_1uxTc',
+      'X-User-Email': import.meta.env.VITE_EMAIL,
+      'X-User-Token': import.meta.env.VITE_TOKEN,
     };
 
     const fetchServices = async () => {
