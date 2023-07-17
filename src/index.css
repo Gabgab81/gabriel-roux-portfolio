@@ -16,11 +16,13 @@
   font-family: myFont, sans-serif;
   /* scroll-behavior: smooth; */
   color-scheme: dark;
-  overscroll-behavior: none;
+  /* overscroll-behavior: none; */
 }
 
 body{
   overflow: hidden;
+  /* height: 100%; */
+  /* overscroll-behavior: none; */
   font-size: 20px;
 }
 
