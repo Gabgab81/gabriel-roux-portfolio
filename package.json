@@ -3,15 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "dev": "vite",
-    // "build": "vite build",
+    "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start": "node main.jsx",
-    "build": "tsc && vite build",
-    "postinstall": "npm run build",
-    "serve-heroku": "vite --host 0.0.0.0 --port $PORT preview"
+    "start": "node main.jsx"
   },
   "dependencies": {
     "@react-three/drei": "^9.68.3",
