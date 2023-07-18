@@ -3,6 +3,13 @@ import { SceneCanvas } from './canvas';
 import { motion } from 'framer-motion'
 
 const Hero = () => {
+
+  console.log('I would like to thank:')
+  console.log('Venkatesh for the room: https://sketchfab.com/3d-models/room-c006e44a66a94d099297133a466d42f6')
+  console.log('Eric Fan for the book: https://sketchfab.com/3d-models/book-fc1b43e332d147edb7dca8f89cffa4d7')
+  console.log('SebastianSosnowski for the moon: https://sketchfab.com/3d-models/truth-about-the-dark-side-of-the-moon-33502f4cf5724096a8c03fcdd68d8b68')
+  console.log('irons3th for the Billboard: https://sketchfab.com/3d-models/billboard-park-932773f38faa41f38e74927b5a5fd08c')
+  console.log('Mixamo for the characters and animations: https://www.mixamo.com/')
  
   return (
     <section className='relative w-full  h-screen mx-auto'
