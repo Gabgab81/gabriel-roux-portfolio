@@ -14,7 +14,7 @@ import { folder, useControls } from 'leva';
 
 
 export function Billboard(props) {
-  const { nodes, materials } = useGLTF('/public/models/billboard.glb')
+  const { nodes, materials } = useGLTF('/models/billboard.glb')
   
   // const { p_red, p_green, p_blue, r_red, r_green, r_blue, distance, angle } = useControls({
   //   position: folder({
@@ -60,4 +60,4 @@ export function Billboard(props) {
   )
 }
 
-useGLTF.preload('/public/models/billboard.glb')
+useGLTF.preload('/models/billboard.glb')
