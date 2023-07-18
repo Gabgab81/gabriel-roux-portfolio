@@ -27,7 +27,8 @@
     "react-router-dom": "^6.11.2",
     "react-tilt": "^1.0.2",
     "three": "^0.152.2",
-    "three-stdlib": "^2.22.4"
+    "three-stdlib": "^2.22.4",
+    "vite": "^4.4.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
@@ -39,7 +40,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "postcss": "^8.4.23",
-    "tailwindcss": "^3.3.2",
-    "vite": "^4.4.4"
+    "tailwindcss": "^3.3.2"
   }
 }
