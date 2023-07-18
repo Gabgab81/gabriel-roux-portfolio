@@ -59,6 +59,8 @@ const About = () => {
       'X-User-Token': import.meta.env.VITE_TOKEN,
     };
 
+    console.log(import.meta.env.VITE_EMAIL)
+    console.log(import.meta.env.VITE_TOKEN)
     const fetchServices = async () => {
       try {
         const response = await fetch(API_URL, {headers})
