@@ -13,7 +13,7 @@ import { useFrame } from '@react-three/fiber'
 
 export function Moon(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/public/models/moon.glb')
+  const { nodes, materials, animations } = useGLTF('/models/moon.glb')
   const { actions } = useAnimations(animations, group)
 
   useFrame(() => {
@@ -95,4 +95,4 @@ export function Moon(props) {
   )
 }
 
-useGLTF.preload('/public/models/moon.glb')
+useGLTF.preload('/models/moon.glb')

@@ -11,7 +11,7 @@ export function GptHand(props) {
   const group = useRef()
 
   const [texture] = useState(() => new THREE.CanvasTexture(new FlakesTexture(), THREE.UVMapping, THREE.RepeatWrapping, THREE.RepeatWrapping))
-  const { nodes, materials, animations } = useGLTF('public/models/gptHandFront.glb')
+  const { nodes, materials, animations } = useGLTF('/models/gptHandFront.glb')
   const { actions } = useAnimations(animations, group)
   // console.log(actions["handFront"])
 
@@ -49,4 +49,4 @@ export function GptHand(props) {
   )
 }
 
-useGLTF.preload('public/models/gptHandFront.glb')
+useGLTF.preload('models/gptHandFront.glb')

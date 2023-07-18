@@ -20,13 +20,13 @@ export function Gpt(props) {
 
   //Model
   const [texture] = useState(() => new THREE.CanvasTexture(new FlakesTexture(), THREE.UVMapping, THREE.RepeatWrapping, THREE.RepeatWrapping))
-  const { nodes, materials } = useGLTF('/public/models/gpt.glb')
+  const { nodes, materials } = useGLTF('/models/gpt.glb')
   // console.log(nodes)
   //Moldel
 
   //Animations
-  const { animations: typingAnimation } = useFBX("public/animations/Typing.fbx")
-  const { animations: sittingAnimation } = useFBX("public/animations/Sitting.fbx")
+  const { animations: typingAnimation } = useFBX("/animations/Typing.fbx")
+  const { animations: sittingAnimation } = useFBX("/animations/Sitting.fbx")
   typingAnimation[0].name = "typing";
   sittingAnimation[0].name = "sitting";
   //Animations
@@ -136,4 +136,4 @@ export function Gpt(props) {
   )
 }
 
-useGLTF.preload('/public/models/gpt.glb')
+useGLTF.preload('/models/gpt.glb')
