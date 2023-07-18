@@ -28,12 +28,12 @@
     "react-tilt": "^1.0.2",
     "three": "^0.152.2",
     "three-stdlib": "^2.22.4",
-    "vite": "^4.4.4"
+    "vite": "^4.4.4",
+    "@vitejs/plugin-react": "^4.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.38.0",
     "eslint-plugin-react": "^7.32.2",
